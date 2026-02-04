@@ -1,0 +1,148 @@
+2025-10-14 16:32:47 - Incoming Request: PID=, OID=, SIGN=
+2025-10-14 16:39:31 - Incoming Request: PID=, OID=, SIGN=
+2025-10-14 16:49:37 - Incoming Request: PID=pay_RTKlrkUV0KhSON, OID=order_RTKlV4g62D6rjf, SIGN=acda61d57b8969793909d935f187c1479b3d0a86cc3fa767d0dcdae75d6201b7
+2025-10-14 17:39:00 - Incoming Request: PID=, OID=, SIGN=
+2025-10-14 17:39:19 - Incoming Request: PID=, OID=, SIGN=
+2025-10-14 17:40:33 - Incoming Request: PID=pay_RTLduxfWftFzty, OID=order_RTLdXdX6y10HqU, SIGN=2d9ae8596da58380c642b58b6b22390d0eec0047d5ca2a4ba860f92e6ae21c4b
+2025-10-14 17:41:27 - Signature verification successful.
+2025-10-14 17:41:33 - Status: captured
+2025-10-14 17:41:33 - Bank: BARB_R
+2025-10-14 17:41:34 - Payment Mode: netbanking
+2025-10-14 17:41:34 - Amount: 14 INR
+2025-10-14 17:41:34 - Transaction Date: 14-Oct-2025 05:40:21 PM
+2025-10-14 17:41:34 - Error Code: 
+2025-10-14 17:46:02 - Incoming Request: PID=pay_RTLjGz8CFGQdX4, OID=order_RTLj4FqPYt4c9O, SIGN=1050f45bbc038d96a990b98081b5ee8ed860918e74383aa21e41b945aea926e0
+2025-10-14 17:46:50 - Signature verification successful.
+2025-10-14 17:46:50 - Status: captured
+2025-10-14 17:46:50 - Bank: BARB_R
+2025-10-14 17:46:50 - Payment Mode: netbanking
+2025-10-14 17:46:50 - Amount: 11.4 INR
+2025-10-14 17:46:50 - Transaction Date: 14-Oct-2025 05:45:25 PM
+2025-10-14 17:46:50 - Error Code: 
+2025-10-16 15:07:06 - Incoming Request: PID=, OID=, SIGN=
+2025-10-16 16:49:20 - Incoming Request: PID=pay_RU7pPfyRxHg8Sk, OID=order_RU7of7DDAzOBUf, SIGN=64b603179261ac7b14a439faad4448cb46d574d7fbb6db8c621ad6d212f1abca
+2025-10-16 16:49:21 - Signature verification successful.
+2025-10-16 16:49:21 - Status: captured
+2025-10-16 16:49:21 - Bank: BARB_R
+2025-10-16 16:49:21 - Payment Mode: netbanking
+2025-10-16 16:49:21 - Amount: 114000 INR
+2025-10-16 16:49:21 - Transaction Date: 16-Oct-2025 04:48:31 PM
+2025-10-16 16:49:21 - Error Code: 
+2025-10-16 16:49:56 - Incoming Request: PID=, OID=, SIGN=
+2025-10-16 16:50:47 - Incoming Request: PID=pay_RU7rhQqW5xM0yH, OID=order_RU7rSqoD3PZvD0, SIGN=d1fb8674a312a7597ef82b00bdc934a9391d3175db770836376b4073a0c69c84
+2025-10-16 16:50:48 - Signature verification successful.
+2025-10-16 16:50:48 - Status: captured
+2025-10-16 16:50:48 - Bank: BARB_R
+2025-10-16 16:50:48 - Payment Mode: netbanking
+2025-10-16 16:50:48 - Amount: 2280 INR
+2025-10-16 16:50:48 - Transaction Date: 16-Oct-2025 04:50:41 PM
+2025-10-16 16:50:48 - Error Code: 
+2025-10-16 16:52:55 - Incoming Request: PID=pay_RU7teHdZE7EZEA, OID=order_RU7tOJjdD5r95L, SIGN=9a3a4e82d77c12fc93c5fa18b007fb82cf93231d6c4bf742caf78a301c34c141
+2025-10-16 16:53:31 - Signature verification successful.
+2025-10-16 16:53:31 - Status: captured
+2025-10-16 16:53:32 - Bank: BARB_R
+2025-10-16 16:53:32 - Payment Mode: netbanking
+2025-10-16 16:53:33 - Amount: 1400 INR
+2025-10-16 16:53:33 - Transaction Date: 16-Oct-2025 04:52:32 PM
+2025-10-16 16:53:34 - Error Code: 
+2025-10-16 16:58:27 - Incoming Request: PID=pay_RU7zmEfQwRGEEU, OID=order_RU7zXWZkO8u1hE, SIGN=4f62f8f1df7e832af6fa5bdf582b69c7aa7f260c80814cfaa4b2bf7317ca9a88
+2025-10-16 16:58:28 - Signature verification successful.
+2025-10-16 16:58:28 - Status: captured
+2025-10-16 16:58:28 - Bank: BARB_R
+2025-10-16 16:58:28 - Payment Mode: netbanking
+2025-10-16 16:58:28 - Amount: 1400 INR
+2025-10-16 16:58:28 - Transaction Date: 16-Oct-2025 04:58:20 PM
+2025-10-16 16:58:28 - Error Code: 
+2025-10-16 16:59:58 - Incoming Request: PID=, OID=, SIGN=
+2025-10-16 17:00:38 - Payment FAILED update result: Error: Error converting data type nvarchar to numeric.
+2025-10-16 17:03:20 - Incoming Request: PID=, OID=, SIGN=
+2025-10-16 17:03:30 - Payment FAILED update result: No record found for the given BankTxnId.
+2025-10-16 17:05:08 - Incoming Request: PID=, OID=, SIGN=
+2025-10-16 17:05:34 - Payment FAILED update result: No record found for the given BankTxnId.
+2025-10-16 17:06:36 - Incoming Request: PID=, OID=, SIGN=
+2025-10-16 17:06:36 - Payment FAILED update result: No record found for the given BankTxnId.
+2025-10-16 17:08:57 - Incoming Request: PID=, OID=, SIGN=
+2025-10-16 17:09:21 - Payment FAILED update result: No record found for the given BankTxnId.
+2025-10-16 17:10:33 - Incoming Request: PID=, OID=, SIGN=
+2025-10-16 17:11:14 - Payment FAILED update result: No record found for the given BankTxnId.
+2025-10-16 17:21:32 - Incoming Request: PID=, OID=, SIGN=
+2025-10-16 17:22:10 - Incoming Request: PID=, OID=, SIGN=
+2025-10-16 17:23:58 - Incoming Request: PID=, OID=, SIGN=
+2025-10-16 17:30:29 - Incoming Request: PID=, OID=, SIGN=
+2025-10-16 17:43:12 - Incoming Request: PID=, OID=, SIGN=
+2025-10-16 17:49:59 - Incoming Request: PID=, OID=, SIGN=
+2025-10-16 17:50:06 - Payment FAILED update result: No record found for the given BankTxnId.
+2025-10-16 17:56:32 - Incoming Request: PID=, OID=, SIGN=
+2025-10-16 18:02:21 - Payment FAILED update result: No record found for the given BankTxnId.
+2025-10-16 18:04:50 - Incoming Request: PID=, OID=, SIGN=
+2025-10-16 18:04:50 - Payment FAILED update result: 0
+2025-10-16 23:55:28 - Incoming Request: PID=, OID=, SIGN=
+2025-10-16 23:55:49 - Payment FAILED update result: 0
+2025-10-17 00:00:30 - Incoming Request: PID=, OID=, SIGN=
+2025-10-17 00:00:32 - Payment FAILED update result: 0
+2025-10-17 00:10:23 - Incoming Request: PID=, OID=, SIGN=
+2025-10-17 00:10:24 - Payment FAILED update result: 0
+2025-10-17 11:09:18 - Incoming Request: PID=, OID=, SIGN=
+2025-10-17 11:09:18 - Payment FAILED update result: 0
+2025-10-17 12:15:32 - Incoming Request: PID=, OID=, SIGN=
+2025-10-17 12:16:45 - Incoming Request: PID=pay_RURjPmHAOKSSau, OID=order_RURj8YWc5VWKSm, SIGN=e846116364f359042e2392ae6315b2114757524e5a994598334755e393d73a44
+2025-10-17 12:16:47 - Signature verification successful.
+2025-10-17 12:16:47 - Status: captured
+2025-10-17 12:16:47 - Bank: BARB_R
+2025-10-17 12:16:47 - Payment Mode: netbanking
+2025-10-17 12:16:47 - Amount: 1140 INR
+2025-10-17 12:16:47 - Transaction Date: 17-Oct-2025 12:16:43 PM
+2025-10-17 12:16:47 - Error Code: 
+2025-10-17 12:17:35 - Incoming Request: PID=, OID=, SIGN=
+2025-10-17 12:17:35 - Payment FAILED update result: 0
+2025-10-17 12:20:50 - Incoming Request: PID=pay_RURnjD2DyDrhfJ, OID=order_RURnYtCN8ZeoId, SIGN=6264149381db17babdc9bb58eaa703ca6fd1a129aa2b82ed8ee04d56c196dc27
+2025-10-17 12:20:53 - Signature verification successful.
+2025-10-17 12:20:53 - Status: captured
+2025-10-17 12:20:53 - Bank: BARB_R
+2025-10-17 12:20:53 - Payment Mode: netbanking
+2025-10-17 12:20:53 - Amount: 1140 INR
+2025-10-17 12:20:53 - Transaction Date: 17-Oct-2025 12:20:48 PM
+2025-10-17 12:20:53 - Error Code: 
+2025-10-17 12:21:31 - Incoming Request: PID=, OID=, SIGN=
+2025-10-17 12:21:31 - Payment FAILED update result: 0
+2025-10-17 17:06:57 - Incoming Request: PID=pay_RUWfv7bwZbLZra, OID=order_RUWfgQAylMw1nT, SIGN=8b03ecf1852bbf631cfdca58128b4fbb8f7e1e33f1424c113839665045467f69
+2025-10-17 17:06:58 - Signature verification successful.
+2025-10-17 17:06:58 - Status: captured
+2025-10-17 17:06:58 - Bank: BARB_R
+2025-10-17 17:06:58 - Payment Mode: netbanking
+2025-10-17 17:06:58 - Amount: 2540 INR
+2025-10-17 17:06:58 - Transaction Date: 17-Oct-2025 05:06:53 PM
+2025-10-17 17:06:58 - Error Code: 
+2025-10-17 17:10:34 - Incoming Request: PID=pay_RUWjm0dBUzWgLd, OID=order_RUWjYZqJU1CbyW, SIGN=0ddfa50affba27571427faa5fa2785b13ee86eb8e02cfc9527df2b51b449d809
+2025-10-17 17:10:35 - Signature verification successful.
+2025-10-17 17:10:35 - Status: captured
+2025-10-17 17:10:35 - Bank: BARB_R
+2025-10-17 17:10:35 - Payment Mode: netbanking
+2025-10-17 17:10:35 - Amount: 1860 INR
+2025-10-17 17:10:35 - Transaction Date: 17-Oct-2025 05:10:31 PM
+2025-10-17 17:10:35 - Error Code: 
+2025-10-17 17:15:53 - Incoming Request: PID=pay_RUWpKWd68rZceg, OID=order_RUWoxETkxQejye, SIGN=2205f515ff73f7d776ccacd5ee6e6461d677478af9a7ce7d816657f6e05005d1
+2025-10-17 17:15:54 - Signature verification successful.
+2025-10-17 17:15:54 - Status: captured
+2025-10-17 17:15:54 - Bank: BARB_R
+2025-10-17 17:15:54 - Payment Mode: netbanking
+2025-10-17 17:15:54 - Amount: 2460 INR
+2025-10-17 17:15:54 - Transaction Date: 17-Oct-2025 05:15:47 PM
+2025-10-17 17:15:54 - Error Code: 
+2025-10-18 12:22:21 - Incoming Request: PID=pay_RUqLOSc8xOL0ae, OID=order_RUqLBrytGGWY1G, SIGN=4c828544f1a6b669046a1f687b41db27fd98012764f4f90be68eb3ad11f31aa9
+2025-10-18 12:23:13 - Signature verification successful.
+2025-10-18 12:23:13 - Status: captured
+2025-10-18 12:23:13 - Bank: BARB_R
+2025-10-18 12:23:13 - Payment Mode: netbanking
+2025-10-18 12:23:13 - Amount: 1140 INR
+2025-10-18 12:23:13 - Transaction Date: 18-Oct-2025 12:21:19 PM
+2025-10-18 12:23:13 - Error Code: 
+2025-11-17 11:24:35 - Incoming Request: PID=, OID=, SIGN=
+2025-12-02 17:04:12 - Incoming Request: PID=pay_RmjCSUGPaLiyC9, OID=order_RmjCBWQqVA3QOi, SIGN=f9fb7ee3876767a68bac7a365f61d8cb0d54944a23c13040eddace7725da26ee
+2025-12-02 17:04:13 - Signature verification successful.
+2025-12-02 17:04:13 - Status: captured
+2025-12-02 17:04:13 - Bank: HDFC
+2025-12-02 17:04:13 - Payment Mode: netbanking
+2025-12-02 17:04:13 - Amount: 1290 INR
+2025-12-02 17:04:13 - Transaction Date: 02-Dec-2025 05:04:02 PM
+2025-12-02 17:04:13 - Error Code: 

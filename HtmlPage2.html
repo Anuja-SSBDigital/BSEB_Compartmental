@@ -1,0 +1,401 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>INTERMEDIATE EXAMINATION – Registration Form (Session 2025–27)</title>
+    <style>
+        /* --- Page layout (A4, printable) --- */
+        @page {
+            size: A4;
+            margin: 14mm;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+            font-size: 12px;
+            color: #000;
+            margin: 0;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            box-sizing: border-box;
+            padding: 10mm 12mm;
+            border: 1px solid #000;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .row {
+            display: flex;
+            gap: 8px;
+        }
+
+        .between {
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        .mt-4 {
+            margin-top: 4px;
+        }
+
+        .mt-6 {
+            margin-top: 6px;
+        }
+
+        .mt-8 {
+            margin-top: 8px;
+        }
+
+        .mb-4 {
+            margin-bottom: 4px;
+        }
+
+        .mb-8 {
+            margin-bottom: 8px;
+        }
+
+        h1, h2, h3 {
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .title {
+            font-size: 16px;
+        }
+
+        .subtitle {
+            font-size: 13px;
+        }
+
+        .note {
+            font-size: 11px;
+            line-height: 1.35;
+        }
+
+        /* --- Boxes & tables --- */
+        .border {
+            border: 1px solid #000;
+        }
+
+        .box {
+            border: 1px solid #000;
+            padding: 6px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 20px 1fr;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+        }
+
+        .field-row {
+            display: grid;
+            grid-template-columns: 18px minmax(120px, 300px) 1fr;
+            align-items: center;
+            gap: 6px;
+        }
+
+            .field-row > .num {
+                font-weight: 700;
+            }
+
+        .input {
+            border: 1px solid #000;
+            height: 26px;
+        }
+
+            .input.sm {
+                height: 22px;
+            }
+
+        .dashed {
+            border: 1px dashed #000;
+        }
+
+        /* Tiny character boxes (for APAR/Aadhaar like blocks) */
+        .charboxes {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: 18px;
+            gap: 2px;
+        }
+
+            .charboxes .c {
+                border: 1px solid #000;
+                height: 18px;
+            }
+
+        /* Photo & Signature boxes */
+        .photo {
+            width: 35mm;
+            height: 30mm;
+            border: 1px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+        }
+
+        .sign-box {
+            width: 60mm;
+            height: 10mm;
+            border: 1px solid #000;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Mini tags */
+        .tag {
+            border: 1px solid #000;
+            padding: 2px 6px;
+            font-size: 10px;
+        }
+
+        /* Table-like list */
+        .list-table {
+            border: 1px solid #000;
+        }
+
+            .list-table .row {
+                border-bottom: 1px solid #000;
+                padding: 4px 6px;
+            }
+
+                .list-table .row:last-child {
+                    border-bottom: 0;
+                }
+
+        .small {
+            font-size: 10px;
+        }
+
+        .xhindi {
+            font-family: Arial, sans-serif;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 8mm;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 11px;
+        }
+
+        /* Ensure checkboxes print nicely */
+        input[type=checkbox] {
+            transform: scale(0.9);
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- Header -->
+        <div class="center">
+            <div class="title">INTERMEDIATE EXAMINATION</div>
+            <div class="subtitle">स्वतंत्र (Private) विद्यार्थियों के लिए</div>
+            <div class="subtitle">REGISTRATION FORM – SESSION – 2025‑27</div>
+        </div>
+
+        <div class="row between mt-8">
+            <div class="tag">Faculty‑COMMERCE</div>
+            <div class="photo">Colour Photograph<br />(Size 35mm × 30mm)</div>
+        </div>
+
+        <div class="right small mt-4">Signature of Student ▢▢▢▢▢▢▢</div>
+
+        <!-- Notes -->
+        <div class="box mt-6 note">
+            <b>नोट –</b> इस आवेदन पत्र को साफ‑सुथरे अक्षरों (BLOCK LETTERS) में भरें। जहां भी शब्द/बॉक्स (Word) में बड़े अक्षर का प्रयोग आवश्यक हो वहां बड़े अक्षरों में लिखें।<br />
+            i. सभी प्रविष्टियों/जानकारी को ध्यानपूर्वक भरें।<br />
+            ii. गलत जानकारी देने पर आवेदन रद्द किया जा सकता है।
+        </div>
+
+        <!-- 1–13 -->
+        <div class="mt-8 list-table">
+            <div class="row field-row">
+                <div class="num">1.</div><div>Category</div><div class="row" style="gap:16px">
+                    <label><input type="checkbox" /> Private</label>
+                </div>
+            </div>
+
+            <div class="row field-row"><div class="num">2.</div><div>College/+2 School Code</div><div class="input"></div></div>
+            <div class="row field-row"><div class="num">3.</div><div>College/+2 School Name</div><div class="input"></div></div>
+
+            <div class="row field-row">
+                <div class="num">4.</div><div>APAAR ID*</div>
+                <div class="charboxes" aria-label="APAAR ID (12 boxes)">
+                    <div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div>
+                    <div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div>
+                    <div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div>
+                </div>
+            </div>
+
+            <div class="row field-row"><div class="num">5.</div><div>Sub Division Name</div><div class="input"></div></div>
+            <div class="row field-row"><div class="num">6.</div><div>District Name</div><div class="input"></div></div>
+            <div class="row field-row"><div class="num">7.</div><div>Student’s Name</div><div class="input"></div></div>
+            <div class="row field-row"><div class="num">8.</div><div>Student’s Name in Hindi</div><div class="input"></div></div>
+            <div class="row field-row"><div class="num">9.</div><div>Mother’s Name</div><div class="input"></div></div>
+            <div class="row field-row"><div class="num">10.</div><div>Mother’s Name in Hindi</div><div class="input"></div></div>
+            <div class="row field-row"><div class="num">11.</div><div>Father’s Name</div><div class="input"></div></div>
+            <div class="row field-row"><div class="num">12.</div><div>Father’s Name in Hindi</div><div class="input"></div></div>
+
+            <div class="row field-row">
+                <div class="num">13.</div><div>Date of Birth</div>
+                <div class="row" style="gap:10px; align-items:center">
+                    <div class="charboxes" aria-label="DOB DD">
+                        <div class="c"></div><div class="c"></div>
+                    </div>
+                    <div class="small">/</div>
+                    <div class="charboxes" aria-label="DOB MM">
+                        <div class="c"></div><div class="c"></div>
+                    </div>
+                    <div class="small">/</div>
+                    <div class="charboxes" aria-label="DOB YYYY">
+                        <div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div>
+                    </div>
+                    <div class="small">(DD/MM/YYYY) (As per Matric/Class X)</div>
+                </div>
+            </div>
+
+            <div class="row field-row">
+                <div class="num">14.</div><div>Matric/Class X Board’s Roll Code</div>
+                <div class="grid-3" style="width:100%">
+                    <div class="input"></div>
+                    <div class="grid" style="grid-template-columns: 90px 1fr;">
+                        <div>Roll Number</div>
+                        <div class="input"></div>
+                    </div>
+                    <div class="grid" style="grid-template-columns: 90px 1fr;">
+                        <div>Passing Year</div>
+                        <div class="input"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 14. Aadhaar / APAAR info block in the image (textual guidance) -->
+        <div class="box mt-8 note">
+            <b>14.</b> कृपया “आधार संख्या” अवश्य दें। यदि छात्र/छात्रा के पास आधार संख्या नहीं है तो आधार बनवाने हेतु नज़दीकी नामांकन केंद्र/सीएससी सेंटर से संपर्क करें।<br />
+            <div class="mt-4 small"><b>PLEASE MENTION “AADHAR NUMBER”</b>. If student doesn’t have “Aadhaar number” then he/she is required to enrol for the same at nearest centre.</div>
+            <div class="mt-4 row" style="gap:8px; align-items:center">
+                <div>Aadhaar Number</div>
+                <div class="charboxes" aria-label="Aadhaar (12 boxes)">
+                    <div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div>
+                    <div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div>
+                    <div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 15. Declaration block -->
+        <div class="box mt-8 note">
+            <b>15.</b> यदि छात्र/छात्रा के पास अभी “आधार संख्या” नहीं है तो नीचे दिया गया घोषणा‑पत्र स्वयं द्वारा भरकर प्रस्तुत करें —
+            <div class="mt-4" style="border:1px solid #000; padding:6px; line-height:1.5">
+                <b>DECLARATION (For students not having AADHAR number)</b><br />
+                I, <span style="display:inline-block; min-width: 120px; border-bottom:1px solid #000;">&nbsp;</span>, hereby declare that I have not enrolled in Aadhaar and have not got any “Aadhaar number”. I also understand that any false declaration made by me in this regard may have consequence of cancellation of my candidature.
+            </div>
+            <div class="row between mt-6">
+                <div class="sign-box">Signature of Candidate / अभ्यर्थी का हस्ताक्षर</div>
+                <div class="grid small" style="grid-template-columns: 80px 1fr; align-items:center">
+                    <div>Date</div>
+                    <div class="input sm"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 16–20 Category / Religion etc. -->
+        <div class="mt-8 list-table">
+            <div class="row field-row">
+                <div class="num">16.</div>
+                <div>Gender</div>
+                <div class="row" style="gap:16px">
+                    <label><input type="checkbox" /> Male</label>
+                    <label><input type="checkbox" /> Female</label>
+                    <label><input type="checkbox" /> Others</label>
+                </div>
+            </div>
+
+            <div class="row field-row">
+                <div class="num">17.</div>
+                <div>Caste Category</div>
+                <div class="row" style="gap:16px">
+                    <label><input type="checkbox" /> General</label>
+                    <label><input type="checkbox" /> SC</label>
+                    <label><input type="checkbox" /> ST</label>
+                    <label><input type="checkbox" /> EBC</label>
+                    <label><input type="checkbox" /> BC</label>
+                </div>
+            </div>
+
+            <div class="row field-row">
+                <div class="num">18.</div>
+                <div>Differently Abled</div>
+                <div class="row" style="gap:16px">
+                    <label><input type="checkbox" /> Yes</label>
+                    <label><input type="checkbox" /> No</label>
+                    <span class="small">(Specify if Yes)</span>
+                    <div class="input" style="flex:1"></div>
+                </div>
+            </div>
+
+            <div class="row field-row">
+                <div class="num">19.</div>
+                <div>Nationality</div>
+                <div class="row" style="gap:16px">
+                    <label><input type="checkbox" /> Indian</label>
+                    <label><input type="checkbox" /> Others</label>
+                </div>
+            </div>
+
+            <div class="row field-row">
+                <div class="num">20.</div>
+                <div>Religion</div>
+                <div class="row" style="gap:16px; flex-wrap:wrap">
+                    <label><input type="checkbox" /> Hindu</label>
+                    <label><input type="checkbox" /> Sikh</label>
+                    <label><input type="checkbox" /> Christian</label>
+                    <label><input type="checkbox" /> Jain</label>
+                    <label><input type="checkbox" /> Baudh</label>
+                    <label><input type="checkbox" /> Others</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">1/2</div>
+    </div>
+</body>
+</html>

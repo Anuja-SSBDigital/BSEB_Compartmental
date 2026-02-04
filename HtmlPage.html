@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <!-- Include the library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<!-- Your HTML content -->
+<div id="admit-card">
+  <table border="1" style="width:100%; border-collapse:collapse;">
+    <tr>
+      <th rowspan="2">Name</th>
+      <th colspan="2">Subject</th>
+    </tr>
+    <tr>
+      <th>Code</th>
+      <th>Title</th>
+    </tr>
+    <tr>
+      <td>Anjali Kumari</td>
+      <td>101</td>
+      <td>Physics</td>
+    </tr>
+  </table>
+</div>
+
+<!-- Button to download PDF -->
+<button onclick="downloadPDF()">Download PDF</button>
+
+<script>
+function downloadPDF() {
+  const element = document.getElementById('admit-card');
+  html2pdf().from(element).set({
+    margin: 5,
+    filename: 'admit-card.pdf',
+    html2canvas: { scale: 2 },
+    jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
+  }).save();
+}
+</script>
+
+</body>
+</html>
