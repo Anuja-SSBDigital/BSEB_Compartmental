@@ -214,7 +214,7 @@
                                                     <td><%# Eval("ExamTypeName") %></td>
 
                                          <%--Delay Fees with adding of 150--%>
-                                                    <td class="fee-amount"
+                                                <%--    <td class="fee-amount"
     data-amount='<%# 
         (
             Eval("IsFirstExam") != DBNull.Value && Convert.ToInt32(Eval("IsFirstExam")) == 1
@@ -246,10 +246,10 @@
                       )
             ) + 150
         %>' />
-</td>
+</td>--%>
                                                    <%-- Without Delay Fees--%>
 
-                                                  <%--  <td class="fee-amount"
+                                                    <td class="fee-amount"
                                                         data-amount='<%# 
         Eval("IsFirstExam") != DBNull.Value && Convert.ToInt32(Eval("IsFirstExam")) == 1
             ? (
@@ -277,7 +277,7 @@
                         : Eval("BaseFee")
                   )
         %>' />
-                                                    </td>--%>
+                                                    </td>
 
                                                     <%--<td class="fee-amount" data-amount='<%# Eval("ConcessionFee") != DBNull.Value && Eval("ConcessionFee") != null ? Eval("ConcessionFee") : Eval("BaseFee") %>'>
                                                     <asp:Label ID="lblFee" runat="server"

@@ -718,10 +718,11 @@ swal({{
             decimal totalFee = db.GetTotalStudentFee(selectedStudentIds);
 
             // additional fee per student
-            decimal additionalFeePerStudent = 150m;
+           // decimal additionalFeePerStudent = 150m;
 
             // total = sum of students' fees + (additional fee * number of selected students)
-            totalAmount = totalFee + (additionalFeePerStudent * selectedCount);
+           // totalAmount = totalFee + (additionalFeePerStudent * selectedCount);
+          totalAmount = totalFee ;
 
             //Delay Fees by adding 150
 
@@ -1006,7 +1007,7 @@ swal({{
                 string respString = "<html>" +
                                   "<body onload='document.forms[0].submit()'>" +   // Auto-submit on load
                                  // "<form action=\"https://securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1\" method=\"post\">" +
-                                          "<form action=\"https://stage-securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1\" method=\"post\">" +
+                                         "<form action=\"https://stage-securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1\" method=\"post\">" +
                                           "<input type=\"hidden\" name=\"encData\" value=\"" + encdata + "\" id=\"frm1\">" +
                                           "<input type=\"hidden\" name=\"clientCode\" value=\"" + clientCode + "\" id=\"frm2\">" +
                                           "<noscript><input type=\"submit\" value=\"Click here to continue\"></noscript>" + // fallback if JS is disabled
