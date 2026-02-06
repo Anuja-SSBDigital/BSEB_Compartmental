@@ -213,7 +213,7 @@
                             <%--  <p class="mt-4" style="color:red; font-weight:bold;font-size: 30px">
                                The website will remain closed for maintenance today from 9:00 PM to 10:30 PM.
                             </p>--%>
-                            <a href="assets/Notifications/Vigyapti-for-Inter-Annual-Exam-2026.pdf"
+                         <%--   <a href="assets/Notifications/Vigyapti-for-Inter-Annual-Exam-2026.pdf"
                                 download="Vigyapti-for-Inter-Annual-Exam-2026.pdf"
                                 style="color: #3059c4; display: block; font-size: 25px;"
                                 class="mt-4">
@@ -224,17 +224,17 @@
                                 style="color: #3059c4; display: block; font-size: 25px;"
                                 class="mt-4">
                                 <i class="fas fa-file-download"></i>Click here to download all Ex-student Exam Forms
-                            </a>
+                            </a>--%>
 							
 							 <%--<a href="http://intermediate.biharboardonline.com/Exam26/StudentExamDummyCard.aspx"  style="color: #3059c4; display: block; font-size: 25px;"
    class="mt-4">
    Click here for Intermediate Dummy Admit Card(Student Login)
 </a>--%>
-<a href="#" 
+<%--<a href="#" 
    onclick="showClosedAlert(); return false;" 
    style="color: #3059c4; display: block; font-size: 25px;">
    Click here for Intermediate Dummy Admit Card (Student Login)
-</a>
+</a>--%>
 
                             <script>
 							
@@ -298,7 +298,7 @@
                         <div class="info-card text-center d-flex flex-column h-100">
                             <img src="assets/img/bsebimage.jpg" class="logo_head" alt="Logo">
                             <h5>Bihar School Examination Board</h5>
-                            <p>Intermediate Annual Examination 2026</p>
+                            <p>Intermediate Special & Compartmental Exam 2026</p>
                             <hr>
                             <p><i class="fas fa-user"></i>Login to start your session</p>
 
