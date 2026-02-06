@@ -139,7 +139,7 @@
                                         <a href="PayExamFormFee.aspx" class="nav-link">Exam Payment</a>
                                     </li>
                                     <li runat="server" id="li_ExaminationForm" visible="false">
-                                        <a href="ExamForm.aspx" class="nav-link">Exam Form/Correction</a>
+                                        <a href="ExamForm.aspx" class="nav-link">Exam Form</a>
                                     </li>
                                     <li runat="server" id="liRegisteredList" visible="false">
                                         <a href="StudentRegisteredList.aspx" class="nav-link">Exam Form Submitted List</a>
@@ -155,11 +155,11 @@
                                             Second Dummy Admit Card
                                         </a>
                                     </li>--%>
-						<li runat="server" id="li_DownloadPracticaladmitcard"  visible="false">
+					<%--	<li runat="server" id="li_DownloadPracticaladmitcard"  visible="false">
                                         <a href="DownloadPracticaladmitcard.aspx" class="nav-link">Download Practical Admit Card</a>
-                                    </li>
+                                    </li>--%>
                                       <li runat="server" id="li_Theoryadmitcard">
-      <a href="Theoryadmitcard.aspx" class="nav-link">Theory Admit Card</a>
+      <a href="Theoryadmitcard.aspx" class="nav-link">Download Theory Admit Card</a>
   </li>
                                     <li runat="server" id="li_CORRECTIONDUMMYREPORT" visible="false">
                                         <a href="DummyCorrectionDetails.aspx" class="nav-link">Exam Report</a>

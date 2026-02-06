@@ -34,7 +34,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
                 liRegisteredList.Visible = true;
                 li_ExaminationForm.Visible = true;
                 li_ExamDwnld.Visible = true;
-                li_DownloadPracticaladmitcard.Visible = true;
+                //li_DownloadPracticaladmitcard.Visible = true;
                 //liExmchallanrecall.Visible = true;
                 //li_Downloadadmitcard.Visible = true;
                 //li_DownloadPracticaladmitcard.Visible = true;
@@ -46,9 +46,10 @@ public partial class MasterPage : System.Web.UI.MasterPage
             {
                 // College menus
 
-               // li_ExaminationForm.Visible = true;
+                li_ExaminationForm.Visible = true;
                 li_ExamDwnld.Visible = true;
                 li_PayExamFormFee.Visible = true;
+                liRegisteredList.Visible = true;
                 //liExmchallanrecall.Visible = true;
                 //li_Downloadadmitcard.Visible = true;
                 //li_DownloadPracticaladmitcard.Visible = true;
