@@ -79,7 +79,7 @@
 
         .cst-overlay-header {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             margin-bottom: 20px;
         }
@@ -207,6 +207,13 @@
                 float: none;
             }
         }
+        /*.cst-field-msg {
+    color: #dc3545 !important;*/ /* Bootstrap danger red */
+        /*font-size: 0.85rem;
+    margin-top: 4px;
+    display: block;
+    min-height: 1.2em;*/ /* prevents layout jump */
+        /*}*/
     </style>
 </head>
 <body>
@@ -219,31 +226,32 @@
             <div class="cst-overlay-box cst-overlay-large">
                 <div class="cst-overlay-header">
                     <h3>Intermediate (+2) School / College Profile</h3>
-<%--                    <button type="button" class="cst-overlay-close" onclick="hideCustomOverlay()">×</button>--%>
+                    <%--                    <button type="button" class="cst-overlay-close" onclick="hideCustomOverlay()">×</button>--%>
                 </div>
 
                 <div class="cst-overlay-body">
-                    <p class="text-center mb-4" style="font-weight: 500; color: #444;">
-                        Please verify / update the following details. <span style="color: #e63946;">* All fields are mandatory</span>
-                    </p>
+
 
                     <div id="cstOverlayForm">
                         <div class="row">
                             <!-- Column 1 -->
                             <div class="col-md-6">
                                 <div class="cst-floating-field">
-                                    <input type="text" id="cstCollegeCode" placeholder=" "  >
+                                    <input type="text" id="cstCollegeCode" placeholder=" ">
                                     <label for="cstCollegeCode">College Code</label>
+                                    <span class="cst-field-msg" id="cstCollegeCodeMsg"></span>
                                 </div>
 
                                 <div class="cst-floating-field">
-                                    <input type="text" id="cstCollegeName" placeholder=" "  >
+                                    <input type="text" id="cstCollegeName" placeholder=" ">
                                     <label for="cstCollegeName">College Name</label>
+                                    <span class="cst-field-msg" id="cstCollegeNameMsg"></span>
                                 </div>
 
                                 <div class="cst-floating-field">
-                                    <input type="text" id="cstDistrictName" placeholder=" "  >
+                                    <input type="text" id="cstDistrictName" placeholder=" ">
                                     <label for="cstDistrictName">District Name</label>
+                                    <span class="cst-field-msg" id="cstDistrictNameMsg"></span>
                                 </div>
 
                                 <div class="cst-floating-field">
@@ -273,11 +281,11 @@
                                     <span class="cst-field-msg" id="cstPrincipalEmailMsg"></span>
                                 </div>
 
-                                <div class="cst-floating-field">
+                                <%--<div class="cst-floating-field">
                                     <input type="text" id="cstSubDivision" placeholder=" " required>
                                     <label for="cstSubDivision">+2 School / College Sub-Division Name <span class="required">*</span></label>
                                     <span class="cst-field-msg" id="cstSubDivisionMsg"></span>
-                                </div>
+                                </div>--%>
 
                                 <div class="cst-floating-field">
                                     <input type="text" id="cstBlockName" placeholder=" " required>
@@ -285,11 +293,7 @@
                                     <span class="cst-field-msg" id="cstBlockNameMsg"></span>
                                 </div>
 
-                                <div class="cst-floating-field">
-                                    <input type="text" id="cstFullAddress" placeholder=" " required>
-                                    <label for="cstFullAddress">+2 School / College Full Address <span class="required">*</span></label>
-                                    <span class="cst-field-msg" id="cstFullAddressMsg"></span>
-                                </div>
+                             
 
                                 <div class="cst-floating-field">
                                     <input type="text" id="cstPinCode" placeholder=" " required maxlength="6">
@@ -298,7 +302,15 @@
                                 </div>
                             </div>
                         </div>
-
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <div class="cst-floating-field">
+                                    <textarea id="cstFullAddress" rows="3" placeholder=" " required style="width: 100%; resize: vertical;"></textarea>
+                                    <label for="cstFullAddress">+2 School / College Full Address <span class="required">*</span></label>
+                                    <span class="cst-field-msg" id="cstFullAddressMsg"></span>
+                                </div>
+                            </div>
+                        </div>
                         <div class="text-center mt-4">
                             <button type="button" class="cst-submit-button" onclick="handleOverlaySubmit()">
                                 Submit & Continue
@@ -637,43 +649,80 @@
 
         // Optional: form submit example
         function handleOverlaySubmit() {
-            var name = document.getElementById("cstUserName").value.trim();
-            var email = document.getElementById("cstUserEmail").value.trim();
-            var valid = true;
+            const fields = [
+                { id: "cstCollegeCode", msgId: "cstCollegeCodeMsg", label: "College Code", required: true, type: "text" },
+                { id: "cstCollegeName", msgId: "cstCollegeNameMsg", label: "College Name", required: true, type: "text" },
+                { id: "cstDistrictName", msgId: "cstDistrictNameMsg", label: "District Name", required: true, type: "text" },
+                { id: "cstUDISECode", msgId: "cstUDISEMsg", label: "UDISE Code", required: true, type: "text" },
+                { id: "cstPrincipalName", msgId: "cstPrincipalNameMsg", label: "Principal Name", required: true, type: "text" },
+                { id: "cstPrincipalMobile", msgId: "cstPrincipalMobileMsg", label: "Principal Mobile", required: true, type: "mobile" },
+                { id: "cstPrincipalEmail", msgId: "cstPrincipalEmailMsg", label: "Principal Email", required: true, type: "email" },
+                { id: "cstSubDivision", msgId: "cstSubDivisionMsg", label: "Sub-Division", required: true, type: "text" },
+                { id: "cstBlockName", msgId: "cstBlockNameMsg", label: "Block Name", required: true, type: "text" },
+                { id: "cstPinCode", msgId: "cstPinCodeMsg", label: "PIN Code", required: true, type: "pin" },
+                { id: "cstFullAddress", msgId: "cstFullAddressMsg", label: "Full Address", required: true, type: "text" }
+            ];
 
-            document.getElementById("cstNameMsg").textContent = "";
-            document.getElementById("cstEmailMsg").textContent = "";
+            let valid = true;
 
-            if (!name) {
-                document.getElementById("cstNameMsg").textContent = "Name is required";
-                valid = false;
-            }
-            if (!email) {
-                document.getElementById("cstEmailMsg").textContent = "Email is required";
-                valid = false;
-            }
+            // Clear all previous error messages
+            fields.forEach(f => {
+                const msgEl = document.getElementById(f.msgId);
+                if (msgEl) msgEl.textContent = "";
+            });
+
+            fields.forEach(field => {
+                const input = document.getElementById(field.id);
+                if (!input) return;
+
+                const value = input.value.trim();
+
+                // Required check
+                if (field.required && !value) {
+                    document.getElementById(field.msgId).textContent = `${field.label} is required`;
+                    valid = false;
+                    return;
+                }
+
+                // Specific validations
+                if (field.type === "mobile") {
+                    if (!/^[6789]\d{9}$/.test(value)) {u
+                        document.getElementById(field.msgId).textContent =
+                            value.length !== 10 ? "Mobile number must be exactly 10 digits" :
+                                "Mobile number must start with 6, 7, 8 or 9";
+                        valid = false;
+                    }
+                }
+
+                else if (field.type === "pin") {
+                    if (!/^\d{6}$/.test(value)) {
+                        document.getElementById(field.msgId).textContent = "PIN code must be exactly 6 digits";
+                        valid = false;
+                    }
+                }
+
+                else if (field.type === "email") {
+                    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+                        document.getElementById(field.msgId).textContent = "Please enter a valid email address";
+                        valid = false;
+                    }
+                }
+            });
 
             if (valid) {
-                // Optional: Send data to server via AJAX (recommended)
-                // Example with fetch (modern browsers):
-                fetch('YourHandlerPage.aspx/SaveUserInfo', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ name: name, email: email })
-                })
-                    .then(response => {
-                        if (response.ok) {
-                            alert("Thank you! Information saved.");
-                            hideCustomOverlay();
-                        } else {
-                            alert("Error saving data.");
-                        }
-                    })
-                    .catch(() => alert("Network error."));
+                // Collect all values (you can send via AJAX later)
+                const formData = {};
+                fields.forEach(f => {
+                    formData[f.id.replace("cst", "")] = document.getElementById(f.id).value.trim();
+                });
 
-                // Or simple alert for now:
-                // alert("Thank you! Form submitted.");
-                // hideCustomOverlay();
+                console.log("Form submitted successfully:", formData);
+
+                alert("Profile updated successfully!");
+                hideCustomOverlay();
+
+                // Optional: AJAX save
+                // fetch('UpdateProfileHandler.aspx', { method: 'POST', body: JSON.stringify(formData), ... })
             }
         }
     </script>
