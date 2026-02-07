@@ -24,7 +24,8 @@ public partial class login : System.Web.UI.Page
         try
         {
             string message;
-            DataTable dt = db.LoginUser(txt_username.Text.Trim(), txt_password.Text.Trim(), out message);
+            bool IsAdmin = txt_username.Text.Trim().Equals("Admin@bseb.com", StringComparison.OrdinalIgnoreCase);
+            DataTable dt = db.LoginUser(txt_username.Text.Trim(), txt_password.Text.Trim(), out message, IsAdmin);
 
             if (message == "Login successful." && dt.Rows.Count > 0)
             {
@@ -36,6 +37,7 @@ public partial class login : System.Web.UI.Page
                 Session["DistrictCode"] = dt.Rows[0]["DistrictCode"];
                 Session["PrincipalMobileNo"] = dt.Rows[0]["PrincipalMobileNo"];
                 Session["EmailId"] = dt.Rows[0]["EmailId"];
+                Session["IsProfileCompleted"] = dt.Rows[0]["IsProfileCompleted"];
                // Response.Write("<script>alert('Site is under maintenance. Please try again later.');</script>");
                   Response.Redirect("AppModule.aspx", false);
                 Context.ApplicationInstance.CompleteRequest();
