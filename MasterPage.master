@@ -270,7 +270,7 @@
                             <!-- Column 2 -->
                             <div class="col-md-6">
                                 <div class="cst-floating-field">
-                                    <input type="tel" id="cstPrincipalMobile" placeholder=" " required maxlength="10">
+                                    <input type="" id="cstPrincipalMobile" placeholder=" " required maxlength="10">
                                     <label for="cstPrincipalMobile">Principal Mobile Number <span class="required">*</span></label>
                                     <span class="cst-field-msg" id="cstPrincipalMobileMsg"></span>
                                 </div>
@@ -686,7 +686,7 @@
 
                 // Specific validations
                 if (field.type === "mobile") {
-                    if (!/^[6789]\d{9}$/.test(value)) {u
+                    if (!/^[6789]\d{9}$/.test(value)) {
                         document.getElementById(field.msgId).textContent =
                             value.length !== 10 ? "Mobile number must be exactly 10 digits" :
                                 "Mobile number must start with 6, 7, 8 or 9";
