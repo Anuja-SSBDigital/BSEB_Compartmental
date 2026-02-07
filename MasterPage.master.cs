@@ -11,26 +11,19 @@ public partial class MasterPage : System.Web.UI.MasterPage
         {
             bool showPopup = false;
 
-            // Check Admin
             bool isAdmin = Session["CollegeName"] != null && Session["CollegeName"].ToString().Equals("Admin", StringComparison.OrdinalIgnoreCase);
 
-            if (!isAdmin)
+            if (!isAdmin && Session["IsProfileCompleted"] != null)
             {
-                // Not Admin → check profile completion
-                if (Session["IsProfileCompleted"] != null)
+                bool isProfileCompleted = Convert.ToBoolean(Session["IsProfileCompleted"]);
+
+               
+                if (isProfileCompleted == false)
                 {
-                    int isProfileCompleted;
-                    if (int.TryParse(Session["IsProfileCompleted"].ToString(), out isProfileCompleted))
-                    {
-                        if (isProfileCompleted == 0)
-                        {
-                            showPopup = true;
-                        }
-                    }
+                    showPopup = true;
                 }
             }
 
-            // Important: FindControl because it's in Master
             hfShowCustomOverlay.Value = showPopup ? "1" : "0";
 
             if (Session["CollegeId"] == null)
