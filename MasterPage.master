@@ -133,7 +133,7 @@
                                         <a href="ChallanRecall.aspx" class="nav-link">Challan Recall</a>
                                     </li>--%>
                                     <li runat="server" id="li_ExamDwnld" visible="false">
-                                        <a href="DwnldCompartMentalExamForm.aspx" class="nav-link">Download Compartmental Exam Form</a>
+                                        <a href="DwnldCompartMentalExamForm.aspx" class="nav-link">Download Exam Form</a>
                                     </li>
                                     <li runat="server" id="li_PayExamFormFee">
                                         <a href="PayExamFormFee.aspx" class="nav-link">Exam Payment</a>
