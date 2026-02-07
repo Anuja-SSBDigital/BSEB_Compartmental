@@ -22,15 +22,292 @@
     <%--<link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon_v1.png' />--%>
     <style>
         .icon-exclamation {
-    color: red;
-    font-size: 2rem;  /* Adjust size as needed */
-}
+            color: red;
+            font-size: 2rem; /* Adjust size as needed */
+        }
+        /* Custom overlay – very low chance of conflict */
+        .cst-overlay-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(20, 30, 60, 0.78);
+            backdrop-filter: blur(6px);
+            z-index: 9998;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.35s ease, visibility 0.35s ease;
+        }
 
+            .cst-overlay-backdrop.active {
+                opacity: 1;
+                visibility: visible;
+            }
+
+        .cst-overlay-container {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            pointer-events: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease 0.1s, visibility 0.4s ease 0.1s;
+        }
+
+            .cst-overlay-container.active {
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+            }
+
+        .cst-overlay-box {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.42);
+            width: 100%;
+            max-width: 460px;
+            margin: 20px;
+            padding: 28px 32px;
+            transform: scale(0.92);
+            transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+        }
+
+        .cst-overlay-container.active .cst-overlay-box {
+            transform: scale(1);
+        }
+
+        .cst-overlay-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+            .cst-overlay-header h3 {
+                margin: 0;
+                font-size: 1.45rem;
+                font-weight: 600;
+                color: #1e293b;
+            }
+
+        .cst-overlay-close {
+            background: none;
+            border: none;
+            font-size: 2.1rem;
+            line-height: 1;
+            color: #64748b;
+            cursor: pointer;
+            padding: 0 8px;
+        }
+
+            .cst-overlay-close:hover {
+                color: #ef4444;
+            }
+
+        .cst-overlay-body p {
+            margin: 0 0 1.2rem;
+        }
+
+        .cst-floating-field {
+            position: relative;
+            margin-bottom: 22px;
+        }
+
+            .cst-floating-field input {
+                width: 100%;
+                padding: 13px 16px;
+                border: 1px solid #cbd5e1;
+                border-radius: 8px;
+                font-size: 1rem;
+                transition: border-color 0.22s, box-shadow 0.22s;
+            }
+
+                .cst-floating-field input:focus {
+                    outline: none;
+                    border-color: #6366f1;
+                    box-shadow: 0 0 0 3px rgba(99,102,241,0.14);
+                }
+
+            .cst-floating-field label {
+                position: absolute;
+                top: 13px;
+                left: 16px;
+                color: #94a3b8;
+                pointer-events: none;
+                transition: all 0.24s ease;
+            }
+
+            .cst-floating-field input:focus + label,
+            .cst-floating-field input:not(:placeholder-shown) + label {
+                top: -9px;
+                left: 12px;
+                font-size: 0.78rem;
+                color: #6366f1;
+                background: #ffffff;
+                padding: 0 5px;
+            }
+
+        .cst-field-msg {
+            color: #ef4444;
+            font-size: 0.82rem;
+            margin-top: 5px;
+            display: block;
+        }
+
+        .cst-submit-button {
+            width: 100%;
+            padding: 13px;
+            background: #6366f1;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.03rem;
+            cursor: pointer;
+            transition: background 0.24s, transform 0.18s;
+        }
+
+            .cst-submit-button:hover {
+                background: #4f46e5;
+                transform: translateY(-1px);
+            }
+
+        .cst-overlay-large {
+            max-width: 820px !important;
+            padding: 32px !important;
+        }
+
+        .cst-overlay-body {
+            max-height: 75vh;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .required {
+            color: #e63946;
+            font-size: 1.1rem;
+            margin-left: 4px;
+        }
+
+        .row {
+            margin-left: -15px;
+            margin-right: -15px;
+        }
+
+        .col-md-6 {
+            padding-left: 15px;
+            padding-right: 15px;
+            width: 50%;
+            float: left;
+        }
+
+        @media (max-width: 768px) {
+            .col-md-6 {
+                width: 100%;
+                float: none;
+            }
+        }
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
 
+    <form id="form1" runat="server">
+        <asp:HiddenField ID="hfShowCustomOverlay" runat="server" Value="0" />
+        <div id="infoOverlayBackdrop" class="cst-overlay-backdrop"></div>
+
+        <div id="infoOverlayContainer" class="cst-overlay-container">
+            <div class="cst-overlay-box cst-overlay-large">
+                <div class="cst-overlay-header">
+                    <h3>Intermediate (+2) School / College Profile</h3>
+<%--                    <button type="button" class="cst-overlay-close" onclick="hideCustomOverlay()">×</button>--%>
+                </div>
+
+                <div class="cst-overlay-body">
+                    <p class="text-center mb-4" style="font-weight: 500; color: #444;">
+                        Please verify / update the following details. <span style="color: #e63946;">* All fields are mandatory</span>
+                    </p>
+
+                    <div id="cstOverlayForm">
+                        <div class="row">
+                            <!-- Column 1 -->
+                            <div class="col-md-6">
+                                <div class="cst-floating-field">
+                                    <input type="text" id="cstCollegeCode" placeholder=" "  >
+                                    <label for="cstCollegeCode">College Code</label>
+                                </div>
+
+                                <div class="cst-floating-field">
+                                    <input type="text" id="cstCollegeName" placeholder=" "  >
+                                    <label for="cstCollegeName">College Name</label>
+                                </div>
+
+                                <div class="cst-floating-field">
+                                    <input type="text" id="cstDistrictName" placeholder=" "  >
+                                    <label for="cstDistrictName">District Name</label>
+                                </div>
+
+                                <div class="cst-floating-field">
+                                    <input type="text" id="cstUDISECode" placeholder=" " required>
+                                    <label for="cstUDISECode">UDISE Code <span class="required">*</span></label>
+                                    <span class="cst-field-msg" id="cstUDISEMsg"></span>
+                                </div>
+
+                                <div class="cst-floating-field">
+                                    <input type="text" id="cstPrincipalName" placeholder=" " required>
+                                    <label for="cstPrincipalName">Principal Name <span class="required">*</span></label>
+                                    <span class="cst-field-msg" id="cstPrincipalNameMsg"></span>
+                                </div>
+                            </div>
+
+                            <!-- Column 2 -->
+                            <div class="col-md-6">
+                                <div class="cst-floating-field">
+                                    <input type="tel" id="cstPrincipalMobile" placeholder=" " required maxlength="10">
+                                    <label for="cstPrincipalMobile">Principal Mobile Number <span class="required">*</span></label>
+                                    <span class="cst-field-msg" id="cstPrincipalMobileMsg"></span>
+                                </div>
+
+                                <div class="cst-floating-field">
+                                    <input type="email" id="cstPrincipalEmail" placeholder=" " required>
+                                    <label for="cstPrincipalEmail">Principal Email ID <span class="required">*</span></label>
+                                    <span class="cst-field-msg" id="cstPrincipalEmailMsg"></span>
+                                </div>
+
+                                <div class="cst-floating-field">
+                                    <input type="text" id="cstSubDivision" placeholder=" " required>
+                                    <label for="cstSubDivision">+2 School / College Sub-Division Name <span class="required">*</span></label>
+                                    <span class="cst-field-msg" id="cstSubDivisionMsg"></span>
+                                </div>
+
+                                <div class="cst-floating-field">
+                                    <input type="text" id="cstBlockName" placeholder=" " required>
+                                    <label for="cstBlockName">+2 School / College Block Name <span class="required">*</span></label>
+                                    <span class="cst-field-msg" id="cstBlockNameMsg"></span>
+                                </div>
+
+                                <div class="cst-floating-field">
+                                    <input type="text" id="cstFullAddress" placeholder=" " required>
+                                    <label for="cstFullAddress">+2 School / College Full Address <span class="required">*</span></label>
+                                    <span class="cst-field-msg" id="cstFullAddressMsg"></span>
+                                </div>
+
+                                <div class="cst-floating-field">
+                                    <input type="text" id="cstPinCode" placeholder=" " required maxlength="6">
+                                    <label for="cstPinCode">PIN Code <span class="required">*</span></label>
+                                    <span class="cst-field-msg" id="cstPinCodeMsg"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <button type="button" class="cst-submit-button" onclick="handleOverlaySubmit()">
+                                Submit & Continue
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="loader"></div>
         <div id="app">
             <div class="main-wrapper main-wrapper-1">
@@ -150,17 +427,17 @@
                                     <%--<li runat="server" id="li_Downloadadmitcard">
                                         <a href="Downloadadmitcard.aspx" class="nav-link">Second Dummy Admit Card</a>
                                     </li>--%>
-                                   <%-- <li runat="server" id="li_SecondDummy">
+                                    <%-- <li runat="server" id="li_SecondDummy">
                                         <a href="javascript:void(0);" class="nav-link" data-toggle="modal" data-target="#secondDummyModal">
                                             Second Dummy Admit Card
                                         </a>
                                     </li>--%>
-					<%--	<li runat="server" id="li_DownloadPracticaladmitcard"  visible="false">
+                                    <%--	<li runat="server" id="li_DownloadPracticaladmitcard"  visible="false">
                                         <a href="DownloadPracticaladmitcard.aspx" class="nav-link">Download Practical Admit Card</a>
                                     </li>--%>
-                                      <li runat="server" id="li_Theoryadmitcard">
-      <a href="Theoryadmitcard.aspx" class="nav-link">Download Theory Admit Card</a>
-  </li>
+                                    <li runat="server" id="li_Theoryadmitcard">
+                                        <a href="Theoryadmitcard.aspx" class="nav-link">Download Theory Admit Card</a>
+                                    </li>
                                     <li runat="server" id="li_CORRECTIONDUMMYREPORT" visible="false">
                                         <a href="DummyCorrectionDetails.aspx" class="nav-link">Exam Report</a>
                                     </li>
@@ -176,7 +453,7 @@
                                     <li runat="server" id="liExmchallanrecall" visible="false">
                                         <a href="ChallanRecall.aspx" class="nav-link">Challan Recall</a>
                                     </li>
-                                  <%--  <li runat="server" id="li_Downloadadmitcard">
+                                    <%--  <li runat="server" id="li_Downloadadmitcard">
                                         <a href="Downloadadmitcard.aspx" class="nav-link">Download Dummy Admit Card</a>
                                     </li>
                                     <li runat="server" id="li_DownloadPracticaladmitcard">
@@ -334,6 +611,72 @@
 
     </form>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        function showCustomOverlay() {
+            document.getElementById("infoOverlayBackdrop").classList.add("active");
+            document.getElementById("infoOverlayContainer").classList.add("active");
+            document.body.style.overflow = "hidden";
+        }
+
+        function hideCustomOverlay() {
+            document.getElementById("infoOverlayBackdrop").classList.remove("active");
+            document.getElementById("infoOverlayContainer").classList.remove("active");
+            document.body.style.overflow = "";
+        }
+
+        // Run on every page load (master page)
+        window.addEventListener("load", function () {
+            var hf = document.getElementById('<%= hfShowCustomOverlay.ClientID %>');
+            if (hf && hf.value === "0") {
+                showCustomOverlay();
+            }
+        });
+
+        // Optional: close when clicking backdrop
+        document.getElementById("infoOverlayBackdrop").addEventListener("click", hideCustomOverlay);
+
+        // Optional: form submit example
+        function handleOverlaySubmit() {
+            var name = document.getElementById("cstUserName").value.trim();
+            var email = document.getElementById("cstUserEmail").value.trim();
+            var valid = true;
+
+            document.getElementById("cstNameMsg").textContent = "";
+            document.getElementById("cstEmailMsg").textContent = "";
+
+            if (!name) {
+                document.getElementById("cstNameMsg").textContent = "Name is required";
+                valid = false;
+            }
+            if (!email) {
+                document.getElementById("cstEmailMsg").textContent = "Email is required";
+                valid = false;
+            }
+
+            if (valid) {
+                // Optional: Send data to server via AJAX (recommended)
+                // Example with fetch (modern browsers):
+                fetch('YourHandlerPage.aspx/SaveUserInfo', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name: name, email: email })
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            alert("Thank you! Information saved.");
+                            hideCustomOverlay();
+                        } else {
+                            alert("Error saving data.");
+                        }
+                    })
+                    .catch(() => alert("Network error."));
+
+                // Or simple alert for now:
+                // alert("Thank you! Form submitted.");
+                // hideCustomOverlay();
+            }
+        }
+    </script>
     <script>
         $(window).on('load', function () {
             var currentURL = window.location.pathname;
