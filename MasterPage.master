@@ -304,7 +304,16 @@
 
 
                                 <div class="cst-floating-field">
-                                    <input type="text" id="cstPinCode" placeholder=" " required maxlength="6">
+                                    <input
+                                        type="text"
+                                        id="cstPinCode"
+                                        placeholder=" "
+                                        required
+                                        maxlength="6"
+                                        pattern="\d{6}"
+                                        inputmode="numeric"
+                                        autocomplete="postal-code"
+                                        oninput="this.value = this.value.replace(/[^0-9]/g, '');">
                                     <label for="cstPinCode">PIN Code <span class="required">*</span></label>
                                     <span class="cst-field-msg" id="cstPinCodeMsg"></span>
                                 </div>
@@ -676,6 +685,33 @@
                 msg.textContent = "Must start with 6, 7, 8 or 9";
             } else {
                 msg.textContent = ""; // valid
+            }
+        });
+        document.getElementById("cstPinCode")?.addEventListener("input", function (e) {
+            const input = e.target;
+            const msg = document.getElementById("cstPinCodeMsg");
+
+            // Remove anything that's not a digit
+            input.value = input.value.replace(/[^0-9]/g, '');
+
+            // Enforce max 6 digits
+            if (input.value.length > 6) {
+                input.value = input.value.slice(0, 6);
+            }
+
+            const val = input.value;
+
+            if (val === "") {
+                msg.textContent = "";
+                return;
+            }
+
+            if (val.length < 6) {
+                msg.textContent = `Remaining ${6 - val.length} digits`;
+                msg.style.color = "#6c757d"; // gray for info
+            } else if (val.length === 6) {
+                msg.textContent = "";
+                msg.style.color = "";
             }
         });
         // Optional: close when clicking backdrop
