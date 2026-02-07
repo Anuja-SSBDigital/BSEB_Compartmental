@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web.UI.WebControls;
 
 public partial class MasterPage : System.Web.UI.MasterPage
 {
@@ -9,6 +10,15 @@ public partial class MasterPage : System.Web.UI.MasterPage
         if (!IsPostBack)
         {
 
+            bool shouldShow = GetShouldShowFromDatabaseOrLogic();  // your logic / DB call
+                                                                   // Example: shouldShow = !UserAlreadySeenNotice();
+
+            // Important: FindControl because it's in Master
+           
+            if (hfShowCustomOverlay.Value != null)
+            {
+                hfShowCustomOverlay.Value = shouldShow ? "1" : "0";
+            }
             if (Session["CollegeId"] == null)
             {
                 Response.Redirect("login.aspx");
@@ -30,7 +40,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
                 li_studentsatus.Visible = true;
                 li_scheduler.Visible = true;
                 liExmchallanrecall.Visible = true;
-				li_CORRECTIONDUMMYREPORT.Visible=true;
+                li_CORRECTIONDUMMYREPORT.Visible = true;
                 liRegisteredList.Visible = true;
                 li_ExaminationForm.Visible = true;
                 li_ExamDwnld.Visible = true;
@@ -77,6 +87,24 @@ public partial class MasterPage : System.Web.UI.MasterPage
         //ApplyModuleVisibility(activeModule);
         // Admin check
 
+    }
+    private bool GetShouldShowFromDatabaseOrLogic()
+    {
+        // This is just a placeholder — replace with your actual query
+        // e.g. SELECT ShowWelcomeModal FROM UserProfile WHERE UserId = @currentUserId
+
+        // Right now you said it's coming as 0 from DB
+        return false;   // or return true when you want to force-show it
+
+        // Real example (pseudo-code):
+        // using (var conn = new SqlConnection(...))
+        // {
+        //     var cmd = new SqlCommand("SELECT ShowWelcomeModal FROM Users WHERE Id = @id", conn);
+        //     cmd.Parameters.AddWithValue("@id", CurrentUserId);
+        //     conn.Open();
+        //     var result = cmd.ExecuteScalar();
+        //     return Convert.ToBoolean(result ?? false);
+        // }
     }
 }
 
