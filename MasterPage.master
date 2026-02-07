@@ -270,7 +270,15 @@
                             <!-- Column 2 -->
                             <div class="col-md-6">
                                 <div class="cst-floating-field">
-                                    <input type="" id="cstPrincipalMobile" placeholder=" " required maxlength="10">
+                                    <input
+                                        type="number"
+                                        id="cstPrincipalMobile"
+                                        placeholder=" "
+                                        required
+                                        min="6000000000"
+                                        max="9999999999"
+                                        step="1"
+                                        oninput="this.value = this.value.replace(/[^0-9]/g, '');">
                                     <label for="cstPrincipalMobile">Principal Mobile Number <span class="required">*</span></label>
                                     <span class="cst-field-msg" id="cstPrincipalMobileMsg"></span>
                                 </div>
@@ -293,7 +301,7 @@
                                     <span class="cst-field-msg" id="cstBlockNameMsg"></span>
                                 </div>
 
-                             
+
 
                                 <div class="cst-floating-field">
                                     <input type="text" id="cstPinCode" placeholder=" " required maxlength="6">
@@ -643,7 +651,33 @@
                 showCustomOverlay();
             }
         });
+        document.getElementById("cstPrincipalMobile")?.addEventListener("input", function (e) {
+            const input = e.target;
+            const msg = document.getElementById("cstPrincipalMobileMsg");
 
+            // Force only digits
+            input.value = input.value.replace(/[^0-9]/g, '');
+
+            // Limit to 10 digits
+            if (input.value.length > 10) {
+                input.value = input.value.slice(0, 10);
+            }
+
+            const val = input.value;
+
+            if (val === "") {
+                msg.textContent = "";
+                return;
+            }
+
+            if (val.length < 10) {
+                msg.textContent = `Remaining ${10 - val.length} digits`;
+            } else if (!/^[6789]/.test(val)) {
+                msg.textContent = "Must start with 6, 7, 8 or 9";
+            } else {
+                msg.textContent = ""; // valid
+            }
+        });
         // Optional: close when clicking backdrop
         document.getElementById("infoOverlayBackdrop").addEventListener("click", hideCustomOverlay);
 
@@ -725,6 +759,7 @@
                 // fetch('UpdateProfileHandler.aspx', { method: 'POST', body: JSON.stringify(formData), ... })
             }
         }
+
     </script>
     <script>
         $(window).on('load', function () {
