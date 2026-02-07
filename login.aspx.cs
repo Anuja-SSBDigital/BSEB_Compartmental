@@ -37,7 +37,11 @@ public partial class login : System.Web.UI.Page
                 Session["DistrictCode"] = dt.Rows[0]["DistrictCode"];
                 Session["PrincipalMobileNo"] = dt.Rows[0]["PrincipalMobileNo"];
                 Session["EmailId"] = dt.Rows[0]["EmailId"];
-                Session["IsProfileCompleted"] = dt.Rows[0]["IsProfileCompleted"];
+                if (!IsAdmin)
+                {
+                    Session["IsProfileCompleted"] = dt.Rows[0]["IsProfileCompleted"];
+                }
+             
                // Response.Write("<script>alert('Site is under maintenance. Please try again later.');</script>");
                   Response.Redirect("AppModule.aspx", false);
                 Context.ApplicationInstance.CompleteRequest();
