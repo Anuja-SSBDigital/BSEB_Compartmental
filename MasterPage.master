@@ -656,7 +656,7 @@
         // Run on every page load (master page)
         window.addEventListener("load", function () {
             var hf = document.getElementById('<%= hfShowCustomOverlay.ClientID %>');
-            if (hf && hf.value === "0") {
+            if (hf && hf.value === "1") {
                 showCustomOverlay();
             }
         });
