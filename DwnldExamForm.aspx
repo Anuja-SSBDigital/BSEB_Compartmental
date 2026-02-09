@@ -82,6 +82,7 @@
             padding: 2px 4px;
         }
     </style>
+
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -251,6 +252,10 @@
             </div>
         </div>
     </div>
+    <!-- Button trigger modal -->
+
+<!-- Modal -->
+
     <script type="text/javascript">
         function validateFaculty() {
             var collegeNameInput = document.getElementById('<%= txt_CollegeName.ClientID %>');
