@@ -41,9 +41,13 @@ public partial class login : System.Web.UI.Page
                 {
                     Session["IsProfileCompleted"] = dt.Rows[0]["IsProfileCompleted"];
                 }
-             
-               // Response.Write("<script>alert('Site is under maintenance. Please try again later.');</script>");
-                  Response.Redirect("AppModule.aspx", false);
+                else
+                {
+                   
+                    Session["IsProfileCompleted"] = null;
+                }
+                // Response.Write("<script>alert('Site is under maintenance. Please try again later.');</script>");
+                Response.Redirect("AppModule.aspx", false);
                 Context.ApplicationInstance.CompleteRequest();
             }
             else
