@@ -214,6 +214,12 @@
     display: block;
     min-height: 1.2em;*/ /* prevents layout jump */
         /*}*/
+
+        button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
     </style>
 </head>
 <body>
@@ -312,8 +318,8 @@
                             </div>
                         </div>
                         <div class="text-center mt-4">
-                            <button type="button" class="cst-submit-button" onclick="handleOverlaySubmit()">
-                                Submit & Continue
+                            <button type="button" id="btnOverlaySubmit" class="cst-submit-button" onclick="handleOverlaySubmit()">
+                                Submit
                             </button>
                         </div>
                     </div>
@@ -763,7 +769,10 @@
             });
 
             if (valid) {
-
+                const btn = document.getElementById("btnOverlaySubmit");
+                if (btn) btn.disabled = true;
+                // 🔄 Show loader
+                $(".loader").show();
                 const formData = {
                     UDISECode: $("#cstUDISECode").val().trim(),
                     PrincipalName: $("#cstPrincipalName").val().trim(),
