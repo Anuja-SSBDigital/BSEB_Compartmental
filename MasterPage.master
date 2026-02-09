@@ -224,7 +224,7 @@
 </head>
 <body>
 
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" novalidate>
         <asp:HiddenField ID="hfShowCustomOverlay" runat="server" Value="0" />
         <div id="infoOverlayBackdrop" class="cst-overlay-backdrop"></div>
 
@@ -243,31 +243,31 @@
                             <!-- Column 1 -->
                             <div class="col-md-6">
                                 <div class="cst-floating-field">
-                                    <input type="text" id="cstCollegeCode" runat="server" disabled />
+                                    <input type="text" id="cstCollegeCode" name="cstCollegeCode" runat="server" disabled />
                                     <label for="cstCollegeCode" style="margin-top:1px">College Code</label>
                                     <span class="cst-field-msg" id="cstCollegeCodeMsg"></span>
                                 </div>
 
                                 <div class="cst-floating-field">
-                                    <input type="text" id="cstCollegeName" runat="server" disabled />
+                                    <input type="text" id="cstCollegeName" name="cstCollegeName" runat="server" disabled />
                                     <label for="cstCollegeName">College Name</label>
                                     <span class="cst-field-msg" id="cstCollegeNameMsg"></span>
                                 </div>
 
                                 <div class="cst-floating-field">
-                                    <input type="text" id="cstDistrictName" runat="server" disabled />
+                                    <input type="text" id="cstDistrictName" name="cstDistrictName" runat="server" disabled />
                                     <label for="cstDistrictName">District Name</label>
                                     <span class="cst-field-msg" id="cstDistrictNameMsg"></span>
                                 </div>
 
                                 <div class="cst-floating-field">
-                                    <input type="text" id="cstUDISECode" placeholder=" " required>
+                                    <input type="text" id="cstUDISECode" name="cstUDISECode" placeholder=" " required>
                                     <label for="cstUDISECode">UDISE Code <span class="required">*</span></label>
                                     <span class="cst-field-msg" id="cstUDISEMsg"></span>
                                 </div>
 
                                 <div class="cst-floating-field">
-                                    <input type="text" id="cstPrincipalName" placeholder=" " required>
+                                    <input type="text" id="cstPrincipalName" name="cstPrincipalName" placeholder=" " required>
                                     <label for="cstPrincipalName">Principal Name <span class="required">*</span></label>
                                     <span class="cst-field-msg" id="cstPrincipalNameMsg"></span>
                                 </div>
@@ -276,13 +276,13 @@
                             <!-- Column 2 -->
                             <div class="col-md-6">
                                 <div class="cst-floating-field">
-                                    <input  type="number" id="cstPrincipalMobile"placeholder=" "required  min="6000000000" max="9999999999" step="1"  oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                                    <input  type="number" id="cstPrincipalMobile" name="cstPrincipalMobile" placeholder=" "required  min="6000000000" max="9999999999" step="1"  oninput="this.value = this.value.replace(/[^0-9]/g, '');">
                                     <label for="cstPrincipalMobile">Principal Mobile Number <span class="required">*</span></label>
                                     <span class="cst-field-msg" id="cstPrincipalMobileMsg"></span>
                                 </div>
 
                                 <div class="cst-floating-field">
-                                    <input type="email" id="cstPrincipalEmail" placeholder=" " required>
+                                    <input type="email" id="cstPrincipalEmail" placeholder=" " name="cstPrincipalEmail" required>
                                     <label for="cstPrincipalEmail">Principal Email ID <span class="required">*</span></label>
                                     <span class="cst-field-msg" id="cstPrincipalEmailMsg"></span>
                                 </div>
@@ -294,7 +294,7 @@
                                 </div>--%>
 
                                 <div class="cst-floating-field">
-                                    <input type="text" id="cstBlockName" placeholder=" " required>
+                                    <input type="text" id="cstBlockName" placeholder=" " name="cstBlockName" required>
                                     <label for="cstBlockName">+2 School / College Block Name <span class="required">*</span></label>
                                     <span class="cst-field-msg" id="cstBlockNameMsg"></span>
                                 </div>
@@ -302,7 +302,7 @@
 
 
                                 <div class="cst-floating-field">
-                                    <input type="text" id="cstPinCode"placeholder=" "  required  maxlength="6" pattern="\d{6}" inputmode="numeric" autocomplete="postal-code" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                                    <input type="text" id="cstPinCode"placeholder=" " name="cstPinCode"  required  maxlength="6" pattern="\d{6}" inputmode="numeric" autocomplete="postal-code" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
                                     <label for="cstPinCode">PIN Code <span class="required">*</span></label>
                                     <span class="cst-field-msg" id="cstPinCodeMsg"></span>
                                 </div>
@@ -311,7 +311,7 @@
                         <div class="row mt-3">
                             <div class="col-12">
                                 <div class="cst-floating-field">
-                                    <textarea id="cstFullAddress" rows="3" placeholder=" " required style="width: 100%; resize: vertical;"></textarea>
+                                    <textarea id="cstFullAddress" rows="3" name="cstFullAddress" placeholder=" " required style="width: 100%; resize: vertical;"></textarea>
                                     <label for="cstFullAddress">+2 School / College Full Address <span class="required">*</span></label>
                                     <span class="cst-field-msg" id="cstFullAddressMsg"></span>
                                 </div>
