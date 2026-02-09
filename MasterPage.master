@@ -140,7 +140,7 @@
 
             .cst-floating-field input:focus + label,
             .cst-floating-field input:not(:placeholder-shown) + label {
-                top: -9px;
+                top: -6px;
                 left: 12px;
                 font-size: 0.78rem;
                 color: #6366f1;
@@ -237,19 +237,19 @@
                             <!-- Column 1 -->
                             <div class="col-md-6">
                                 <div class="cst-floating-field">
-                                    <input type="text" id="cstCollegeCode" placeholder=" ">
-                                    <label for="cstCollegeCode">College Code</label>
+                                    <input type="text" id="cstCollegeCode" runat="server" disabled />
+                                    <label for="cstCollegeCode" style="margin-top:1px">College Code</label>
                                     <span class="cst-field-msg" id="cstCollegeCodeMsg"></span>
                                 </div>
 
                                 <div class="cst-floating-field">
-                                    <input type="text" id="cstCollegeName" placeholder=" ">
+                                    <input type="text" id="cstCollegeName" runat="server" disabled />
                                     <label for="cstCollegeName">College Name</label>
                                     <span class="cst-field-msg" id="cstCollegeNameMsg"></span>
                                 </div>
 
                                 <div class="cst-floating-field">
-                                    <input type="text" id="cstDistrictName" placeholder=" ">
+                                    <input type="text" id="cstDistrictName" runat="server" disabled />
                                     <label for="cstDistrictName">District Name</label>
                                     <span class="cst-field-msg" id="cstDistrictNameMsg"></span>
                                 </div>
@@ -270,15 +270,7 @@
                             <!-- Column 2 -->
                             <div class="col-md-6">
                                 <div class="cst-floating-field">
-                                    <input
-                                        type="number"
-                                        id="cstPrincipalMobile"
-                                        placeholder=" "
-                                        required
-                                        min="6000000000"
-                                        max="9999999999"
-                                        step="1"
-                                        oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                                    <input  type="number" id="cstPrincipalMobile"placeholder=" "required  min="6000000000" max="9999999999" step="1"  oninput="this.value = this.value.replace(/[^0-9]/g, '');">
                                     <label for="cstPrincipalMobile">Principal Mobile Number <span class="required">*</span></label>
                                     <span class="cst-field-msg" id="cstPrincipalMobileMsg"></span>
                                 </div>
@@ -304,16 +296,7 @@
 
 
                                 <div class="cst-floating-field">
-                                    <input
-                                        type="text"
-                                        id="cstPinCode"
-                                        placeholder=" "
-                                        required
-                                        maxlength="6"
-                                        pattern="\d{6}"
-                                        inputmode="numeric"
-                                        autocomplete="postal-code"
-                                        oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                                    <input type="text" id="cstPinCode"placeholder=" "  required  maxlength="6" pattern="\d{6}" inputmode="numeric" autocomplete="postal-code" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
                                     <label for="cstPinCode">PIN Code <span class="required">*</span></label>
                                     <span class="cst-field-msg" id="cstPinCodeMsg"></span>
                                 </div>
@@ -780,19 +763,51 @@
             });
 
             if (valid) {
-                // Collect all values (you can send via AJAX later)
-                const formData = {};
-                fields.forEach(f => {
-                    formData[f.id.replace("cst", "")] = document.getElementById(f.id).value.trim();
+
+                const formData = {
+                    UDISECode: $("#cstUDISECode").val().trim(),
+                    PrincipalName: $("#cstPrincipalName").val().trim(),
+                    PrincipalMobile: $("#cstPrincipalMobile").val().trim(),
+                    PrincipalEmail: $("#cstPrincipalEmail").val().trim(),   
+                    SubDivisionName: $("#cstDistrictName").val().trim(),
+                    BlockName: $("#cstBlockName").val().trim(),
+                    FullAddress: $("#cstFullAddress").val().trim(),
+                    PinCode: $("#cstPinCode").val().trim(),
+                };
+                $(".loader").show();
+             
+                $.ajax({
+                    type: "POST",
+                    url: "DwnldCompartMentalExamForm.aspx/SaveCollegeProfile",
+                    //url: "MasterPage.aspx/SaveCollegeProfile",
+                    data: JSON.stringify(formData),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+
+                    success: function (response) {
+                        $(".loader").hide();
+
+                        if (response.d === "SUCCESS") {
+                            alert("Profile saved successfully!");
+                            hideCustomOverlay();
+                            location.reload(); // refresh so menus/session update
+                        }
+                        else if (response.d === "SESSION_EXPIRED") {
+                            alert("Session expired. Please login again.");
+                            window.location.href = "Login.aspx";
+                        }
+                        else {
+                            alert("Something went wrong. Please try again.");
+                        }
+                    },
+
+                    error: function (err) {
+                        $(".loader").hide();
+                        console.error(err);
+                        alert("Server error occurred.");
+                    }
                 });
-
-                console.log("Form submitted successfully:", formData);
-
-                alert("Profile updated successfully!");
-                hideCustomOverlay();
-
-                // Optional: AJAX save
-                // fetch('UpdateProfileHandler.aspx', { method: 'POST', body: JSON.stringify(formData), ... })
+                //hideCustomOverlay();
             }
         }
 
