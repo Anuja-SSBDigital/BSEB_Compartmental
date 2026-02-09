@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web.Services;
 using System.Web.UI.WebControls;
 
 public partial class MasterPage : System.Web.UI.MasterPage
@@ -21,6 +22,23 @@ public partial class MasterPage : System.Web.UI.MasterPage
                 if (isProfileCompleted == false)
                 {
                     showPopup = true;
+                    if (Session["CollegeCode"] != null )
+                    {
+                        cstCollegeCode.Value = Session["CollegeCode"].ToString();
+                        cstCollegeCode.Visible = true;
+                    }
+                    if (Session["CollegeName"] != null)
+                    {
+                        cstCollegeName.Value = Session["CollegeName"].ToString();
+                        cstCollegeName.Visible = true;
+
+                    }
+                    if (Session["DistrictName"] != null)
+                    {
+                        cstDistrictName.Value=Session["DistrictName"].ToString();
+                        cstDistrictName.Visible = true;
+                    }
+                  
                 }
             }
 
@@ -32,7 +50,8 @@ public partial class MasterPage : System.Web.UI.MasterPage
                 return;
             }
 
-            if (Session["CollegeName"] != null && Session["CollegeName"].ToString() == "Admin")
+            //if (Session["CollegeName"] != null && Session["CollegeName"].ToString() == "Admin")
+            if (isAdmin)
             {
                 // Admin menus
 
@@ -95,7 +114,6 @@ public partial class MasterPage : System.Web.UI.MasterPage
         // Admin check
 
     }
-
 }
 
 //private void SetAllModuleLinksVisibility(bool visible)
