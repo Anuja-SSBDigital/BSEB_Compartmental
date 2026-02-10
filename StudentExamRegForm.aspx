@@ -100,7 +100,7 @@
                             <div class="col-md-6">
                                 <div class="mb-3 form-group">
                                     <label for="collegeCode" class="form-label required">+2 School/College Code:</label>
-                                    <asp:TextBox ID="txtcollegeCode" runat="server" Placeholder="College Code" class="form-control" />
+                                    <asp:TextBox ID="txtcollegeCode" runat="server" Placeholder="College Code" class="form-control" oninput="enforceMaxLength(this,6)" />
                                     <span id="txtcollegeCodeErr" style="display: none; color: red;">Please Enter College Code</span>
                                 </div>
                             </div>
@@ -198,7 +198,7 @@
                                 <div class="mb-3 form-group">
                                     <label for="boardRollCode" class="form-label required">Matric/Class X Board's Roll Code:</label>
 
-                                    <asp:TextBox ID="txtboardRollCode" runat="server" Placeholder="Enter  roll code" class="form-control" TextMode="Number" oninput="enforceMaxLength(this, 5)" />
+                                    <asp:TextBox ID="txtboardRollCode" runat="server" Placeholder="Enter  roll code" class="form-control"  oninput="enforceMaxLength(this, 5)" />
                                     <span id="txtboardRollCodeErr" style="display: none; color: red;">Please Enter Roll Code</span>
                                 </div>
                             </div>
@@ -210,7 +210,7 @@
                                 <div class="mb-3 form-group">
                                     <label for="rollNumber" class="form-label required">Roll Number:</label>
 
-                                    <asp:TextBox ID="txtrollNumber" runat="server" class="form-control" TextMode="Number" />
+                                    <asp:TextBox ID="txtrollNumber" runat="server" class="form-control" oninput="enforceMaxLength(this,9)"/>
                                     <span id="txtrollNumberErr" style="display: none; color: red;">Please Enter Roll Number</span>
                                 </div>
                             </div>
@@ -218,7 +218,7 @@
                                 <div class="mb-3 form-group">
                                     <label for="passingYear" class="form-label required">Passing Year:</label>
 
-                                    <asp:TextBox ID="txtpassingYear" runat="server" class="form-control" />
+                                    <asp:TextBox ID="txtpassingYear" runat="server" class="form-control" oninput="enforceMaxLength(this,6)"/>
                                     <span id="txtpassingYearErr" style="display: none; color: red;">Please Enter Passing Year</span>
                                 </div>
                             </div>
@@ -297,7 +297,7 @@
                             <div class="col-md-6">
                                 <div class="mb-3 form-group">
                                     <label class="form-label required">Mobile No of Student:</label>
-                                    <asp:TextBox ID="txtMobile" runat="server" class="form-control" TextMode="Number" oninput="enforceMaxLength(this, 10)" />
+                                    <asp:TextBox ID="txtMobile" runat="server" class="form-control"  oninput="enforceMaxLength(this, 10)" />
                                     <span id="txtMobileError" class="text-danger" style="display: none;"></span>
                                 </div>
                             </div>
@@ -348,7 +348,7 @@
                                 <div class="mb-3 form-group">
                                     <label class="form-label required">Pin Code:</label>
 
-                                    <asp:TextBox ID="txtpincode" runat="server" class="form-control" TextMode="Number" oninput="enforceMaxLength(this, 6)"/>
+                                    <asp:TextBox ID="txtpincode" runat="server" class="form-control" oninput="enforceMaxLength(this, 6)"/>
                                       <span id="txtpincodeError" class="text-danger" style="display: none;">Please Enter Pincode.</span>
                                 </div>
                             </div>
@@ -374,7 +374,7 @@
                                 <div class="mb-3 form-group">
                                     <label class="form-label">Student's Bank A/C No.:</label>
 
-                                    <asp:TextBox ID="txtBankACNo" runat="server" class="form-control" />
+                                    <asp:TextBox ID="txtBankACNo" runat="server" class="form-control" oninput="enforceMaxLength(this,25)" />
 
                                 </div>
                             </div>
@@ -413,21 +413,11 @@
                             <label class="form-label"><strong>Do you have Aadhar?</strong></label><br>
                             <div class="form-check form-check-inline">
                                 <asp:HiddenField ID="hfAadharOption" runat="server" ClientIDMode="Static" />
-                                <asp:RadioButton 
-                                    ID="aadharYes" 
-                                    runat="server" 
-                                    GroupName="aadhar_option" 
-                                    CssClass="form-check-input" 
-                                    onclick="toggleAadharDivs()" />
+                                <asp:RadioButton  ID="aadharYes"   runat="server"  GroupName="aadhar_option" CssClass="form-check-input"  onclick="toggleAadharDivs()" />
                                 <label class="form-check-label" for="<%= aadharYes.ClientID %>">Yes</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <asp:RadioButton 
-                                    ID="aadharNo" 
-                                    runat="server" 
-                                    GroupName="aadhar_option" 
-                                    CssClass="form-check-input" 
-                                    onclick="toggleAadharDivs()" />
+                                <asp:RadioButton   ID="aadharNo"   runat="server"   GroupName="aadhar_option"   CssClass="form-check-input"  onclick="toggleAadharDivs()" />
                                 <label class="form-check-label" for="<%= aadharNo.ClientID %>">No</label>
                             </div>
                         </div>
@@ -1172,10 +1162,18 @@
 
      // Enforce max length for fields
      function enforceMaxLength(el, maxLength) {
+         // Remove non-numeric characters anywhere in the value
+         el.value = el.value.replace(/[^0-9]/g, '');
+         // Limit length
          if (el.value.length > maxLength) {
              el.value = el.value.slice(0, maxLength);
          }
      }
+     //function enforceMaxLength(el, maxLength) {
+     //    if (el.value.length > maxLength) {
+     //        el.value = el.value.slice(0, maxLength);
+     //    }
+     //}
 
  </script>
 
