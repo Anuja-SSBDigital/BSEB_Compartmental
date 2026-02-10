@@ -65,6 +65,13 @@
         -webkit-print-color-adjust: exact;
     }*/
         /*}*/
+        .info-container {
+            page-break-after: always !important;
+        }
+
+        #subjectsSection {
+            page-break-before: always !important;
+        }
     </style>
     <style type="text/css" media="print">
         /* General Print Adjustments */
@@ -73,7 +80,7 @@
             padding: 0;
             -webkit-print-color-adjust: exact; /* Ensures backgrounds/colors print */
             font-family: Arial, sans-serif; /* Consistent font for print */
-            font-size: 10pt; /* Smaller base font size for better fit */
+            font-size: 8pt; /* Smaller base font size for better fit */
         }
 
         /* Hide UI elements not needed for print */
@@ -242,6 +249,11 @@
         .page-break-before {
             page-break-before: always;
         }
+
+        @page {
+            size: A4 portrait;
+            margin: 10mm; /* ← all sides 10 mm – clean and balanced */
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -267,10 +279,10 @@
                             <style>
                                 .info-container {
                                     width: 100%;
-                                    max-width: 900px;
+                                    max-width: 920px;
                                     margin: auto;
                                     border: 1px solid #000;
-                                    padding: 10px 15px;
+                                    padding: 5px 10px;
                                     font-family: Arial, sans-serif;
                                     font-size: 14px;
                                 }
@@ -496,58 +508,58 @@
                             </div>
 
 
+                            <div id="subjectsSection">
+
+                                <table class="table  table-md brd_1" border="1" id="printable">
+                                    <thead>
+                                        <tr>
+                                            <th>S.No.</th>
+                                            <th>Subject Group</th>
+                                            <th>Subject Code</th>
+                                            <th>Subject Name</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <asp:Repeater ID="rptSubjects" runat="server">
+                                            <ItemTemplate>
+                                                <tr>
+                                                    <td><%# Container.ItemIndex + 1 %></td>
+                                                    <td><%# Eval("SubjectGroup") %></td>
+                                                    <td><%# Eval("SubjectPaperCode") %></td>
+                                                    <td><%# Eval("PaperType") == null || Eval("PaperType").ToString() == "" ? Eval("SubjectName") : Eval("SubjectName") + " (" + Eval("PaperType") + ")" %></td>
+                                                </tr>
+                                            </ItemTemplate>
+                                        </asp:Repeater>
+                                    </tbody>
+                                </table>
+
+                                <%--                            <div class="page-break"></div>--%>
+                                <!-- Forces new PDF page -->
 
 
-                            <table class="table  table-md brd_1" border="1" id="printable">
-                                <thead>
-                                    <tr>
-                                        <th>S.No.</th>
-                                        <th>Subject Group</th>
-                                        <th>Subject Code</th>
-                                        <th>Subject Name</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <asp:Repeater ID="rptSubjects" runat="server">
-                                        <ItemTemplate>
-                                            <tr>
-                                                <td><%# Container.ItemIndex + 1 %></td>
-                                                <td><%# Eval("SubjectGroup") %></td>
-                                                <td><%# Eval("SubjectPaperCode") %></td>
-                                                <td><%# Eval("PaperType") == null || Eval("PaperType").ToString() == "" ? Eval("SubjectName") : Eval("SubjectName") + " (" + Eval("PaperType") + ")" %></td>
-                                            </tr>
-                                        </ItemTemplate>
-                                    </asp:Repeater>
-                                </tbody>
-                            </table>
+                                <div class="row mt-4">
+                                    <div class="col-md-6 text-center photo-signature">
 
-                            <%--                            <div class="page-break"></div>--%>
-                            <!-- Forces new PDF page -->
-
-
-                            <div class="row mt-4">
-                                <div class="col-md-6 text-center photo-signature">
-
-                                    <asp:Image ID="imgPhoto" runat="server" CssClass="preview-img" />
-                                    <%--<p>
+                                        <asp:Image ID="imgPhoto" runat="server" CssClass="preview-img" />
+                                        <%--<p>
                                         <asp:Label ID="lblimgPhoto" runat="server" />
                                     </p>--%>
-                                </div>
-                                <div class="col-md-6 text-center photo-signature">
-                                    <div class="signature-box">
-                                        <asp:Image ID="imgSignature" runat="server" CssClass="signature-img" />
-                                        <%--<div class="mt-1">
+                                    </div>
+                                    <div class="col-md-6 text-center photo-signature">
+                                        <div class="signature-box">
+                                            <asp:Image ID="imgSignature" runat="server" CssClass="signature-img" />
+                                            <%--<div class="mt-1">
                                             <p class="signature">
                                                 <asp:Label ID="lblimgSignature" runat="server" />
                                             </p>
 
                                         </div>--%>
+                                        </div>
+
+
                                     </div>
-
-
                                 </div>
                             </div>
-
                             <div class="mt-4 text-center" id="hideThisDiv">
                                 <%-- <p>
                                     <strong>Amount:</strong>
@@ -585,32 +597,38 @@
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
     <script>
         function downloadPDF() {
-            // Hide/show elements
+            // Hide/show elements temporarily for clean PDF
             document.getElementById('hideThisDiv').style.display = 'none';
             document.getElementById('hidelble').classList.remove('d-none');
 
             const element = document.getElementById("printableDiv");
 
-
-
-            // Generate PDF
+            // Generate PDF with equal margins on all sides
             html2pdf().set({
-                margin: 8,
+                margin: 6,                     // ← Single number = 12 mm on ALL sides (top, right, bottom, left)
+                // Alternative (array format - same effect, more explicit):
+                // margin: [12, 12, 12, 12],    // top, right, bottom, left in mm
+
                 filename: 'ConfirmDetails.pdf',
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
-                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                html2canvas: {
+                    scale: 2.1,                 // Slightly higher scale → sharper text, better fit
+                    useCORS: true,              // Helpful if images are from external URLs
+                    logging: false              // Optional: reduces console noise
+                },
+                jsPDF: {
+                    unit: 'mm',
+                    format: 'a4',
+                    orientation: 'portrait'
+                }
             }).from(element).save().then(() => {
                 // Restore UI
                 document.getElementById('hideThisDiv').style.display = 'block';
                 document.getElementById('hidelble').classList.add('d-none');
             });
         }
-
     </script>
 
     <script>
@@ -620,7 +638,7 @@
             var declarationCheckbox = document.getElementById('<%= declaration.ClientID %>');
 
             if (!declarationCheckbox.checked) {
-                swal({
+                sweetAlert({
                     title: "Declaration Required",
                     text: "Please agree to the declaration by checking the box to proceed.",
                     type: "warning",
@@ -629,7 +647,6 @@
                 });
                 return false;
             }
-            return true;
         }
 
     </script>
