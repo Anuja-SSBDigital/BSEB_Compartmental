@@ -323,7 +323,7 @@
                                 </div>
                                 <input type="hidden" id="captchaResult">
                                 <asp:Button ID="Button1" runat="server" Text="Login" OnClick="btn_login_Click"
-                                    CssClass="btn btn-login" OnClientClick="return validateCaptcha();" />
+                                    CssClass="btn btn-login" OnClientClick="return validateLoginForm() && validateCaptcha();" />
                                 <%--                                <a href="StudentRegCardDownload.aspx" target="_blank" class="d-block mt-2">Download Student Registration Card--%>
                                 <%-- </a>--%>
                             </div>
@@ -378,6 +378,35 @@
             }
             window.onload = generateCaptcha;
         </script>
+        <script>
+            function validateLoginForm() {
+                const username = document.getElementById("<%= txt_username.ClientID %>").value.trim();
+        const password = document.getElementById("<%= txt_password.ClientID %>").value.trim();
+
+                if (username === "") {
+                    swal({
+                        title: 'Required',
+                        text: 'Please enter Username / Email',
+                        icon: 'warning',
+                        button: 'OK'
+                    });
+                    return false;
+                }
+
+                if (password === "") {
+                    swal({
+                        title: 'Required',
+                        text: 'Please enter Password',
+                        icon: 'warning',
+                        button: 'OK'
+                    });
+                    return false;
+                }
+
+                return true;
+            }
+        </script>
+
     </form>
 </body>
 </html>
