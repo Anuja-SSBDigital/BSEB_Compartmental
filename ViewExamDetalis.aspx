@@ -585,6 +585,8 @@
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <script>
         function downloadPDF() {
             // Hide/show elements
@@ -618,7 +620,7 @@
             var declarationCheckbox = document.getElementById('<%= declaration.ClientID %>');
 
             if (!declarationCheckbox.checked) {
-                sweetAlert({
+                swal({
                     title: "Declaration Required",
                     text: "Please agree to the declaration by checking the box to proceed.",
                     type: "warning",
@@ -627,6 +629,7 @@
                 });
                 return false;
             }
+            return true;
         }
 
     </script>
