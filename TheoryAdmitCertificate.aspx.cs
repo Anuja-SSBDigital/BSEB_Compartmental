@@ -230,13 +230,14 @@ public partial class TheoryAdmitCertificate : System.Web.UI.Page
             else if (ExamTypeName == "COMPARTMENTAL")
             {
                 lblExamTitle.Text = "INTERMEDIATE COMPARTMENTAL EXAMINATION, 2026";
+                lblExamTitleHindi.Text = "इंटरमीडिएट कम्पार्टमेंटल परीक्षा, 2026";
             }
             else
             {
                 phFaculty.Visible = true;
                 lblFacultyHindi.Text = "<label><strong>" + hindiFaculty + "</strong></label>";
                 lblExamTitle.Text = "INTERMEDIATE SPECIAL EXAMINATION, 2026";
-                lblExamTitleHindi.Text = "इंटरमीडिएट वार्षिक परीक्षा, 2026";
+                lblExamTitleHindi.Text = "इंटरमीडिएट विशेष परीक्षा, 2026";
                 lblCollegeName.Text = "कॉलेज/+2 स्कूल का नाम";
                 if (tdElective1 != null)
                     tdElective1.InnerHtml = "ऐच्छिक विषय-1";
