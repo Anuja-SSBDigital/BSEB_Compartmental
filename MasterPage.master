@@ -311,8 +311,7 @@
                         <div class="row mt-3">
                             <div class="col-12">
                                 <div class="cst-floating-field">
-                                    <textarea id="cstFullAddress" rows="3" name="cstFullAddress" placeholder=" " required style="width: 100%; resize: vertical;"></textarea>
-                                    <label for="cstFullAddress">+2 School / College Full Address <span class="required">*</span></label>
+                                    <textarea id="cstFullAddress" rows="3" name="cstFullAddress" placeholder="+2 School / College Full Address" required style="width: 100%; resize: vertical;"></textarea>
                                     <span class="cst-field-msg" id="cstFullAddressMsg"></span>
                                 </div>
                             </div>
