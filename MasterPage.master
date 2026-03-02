@@ -287,11 +287,11 @@
                                     <span class="cst-field-msg" id="cstPrincipalEmailMsg"></span>
                                 </div>
 
-                                <%--<div class="cst-floating-field">
+                                <div class="cst-floating-field">
                                     <input type="text" id="cstSubDivision" placeholder=" " required>
                                     <label for="cstSubDivision">+2 School / College Sub-Division Name <span class="required">*</span></label>
                                     <span class="cst-field-msg" id="cstSubDivisionMsg"></span>
-                                </div>--%>
+                                </div>
 
                                 <div class="cst-floating-field">
                                     <input type="text" id="cstBlockName" placeholder=" " name="cstBlockName" required>
@@ -777,7 +777,7 @@
                     PrincipalName: $("#cstPrincipalName").val().trim(),
                     PrincipalMobile: $("#cstPrincipalMobile").val().trim(),
                     PrincipalEmail: $("#cstPrincipalEmail").val().trim(),   
-                    SubDivisionName: $("#cstDistrictName").val().trim(),
+                    SubDivisionName: $("#cstSubDivision").val().trim(),
                     BlockName: $("#cstBlockName").val().trim(),
                     FullAddress: $("#cstFullAddress").val().trim(),
                     PinCode: $("#cstPinCode").val().trim(),
