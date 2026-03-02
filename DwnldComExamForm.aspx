@@ -382,7 +382,10 @@
 
         // ====== 🔍 Filtering + Pagination ======
         function filterAndPaginate() {
-            var searchText = document.getElementById("searchInput").value.toLowerCase();
+            var searchInputEl = document.getElementById("searchInput");
+            if (!searchInputEl) return; // ✅ Guard: exit if search box not rendered
+            var searchText = searchInputEl.value.toLowerCase();
+            //var searchText = document.getElementById("searchInput").value.toLowerCase();
             var rows = document.querySelectorAll("#dataTable tbody tr");
 
             rows.forEach(function (row) {
@@ -513,4 +516,3 @@
 
 
 </asp:Content>
-
