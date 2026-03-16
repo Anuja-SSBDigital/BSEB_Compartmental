@@ -289,13 +289,15 @@
 
                                 <div class="cst-floating-field">
                                     <input type="text" id="cstSubDivision" placeholder=" " required>
-                                    <label for="cstSubDivision">+2 School / College Sub-Division Name <span class="required">*</span></label>
+                                    <label for="cstSubDivision">Sub-Division Name <span class="required">*</span></label>
+                                    <%--<label for="cstSubDivision">+2 School / College Sub-Division Name <span class="required">*</span></label>--%>
                                     <span class="cst-field-msg" id="cstSubDivisionMsg"></span>
                                 </div>
 
                                 <div class="cst-floating-field">
                                     <input type="text" id="cstBlockName" placeholder=" " name="cstBlockName" required>
-                                    <label for="cstBlockName">+2 School / College Block Name <span class="required">*</span></label>
+                                    <label for="cstBlockName">Block Name <span class="required">*</span></label>
+                                    <%--<label for="cstBlockName">+2 School / College Block Name <span class="required">*</span></label>--%>
                                     <span class="cst-field-msg" id="cstBlockNameMsg"></span>
                                 </div>
 
