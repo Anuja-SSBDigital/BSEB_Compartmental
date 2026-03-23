@@ -428,9 +428,9 @@
                                     <li runat="server" id="lichallanrecall" visible="false">
                                         <a href="ChallanRecall.aspx" class="nav-link">Challan Recall</a>
                                     </li>--%>
-                                    <li runat="server" id="li_ExamDwnld" visible="false">
+                                  <%--  <li runat="server" id="li_ExamDwnld" visible="false">
                                         <a href="DwnldComExamForm.aspx" class="nav-link">Download Exam Form</a>
-                                    </li>
+                                    </li>--%>
                                     <li runat="server" id="li_PayExamFormFee">
                                         <a href="PayExamFormFee.aspx" class="nav-link">Exam Payment</a>
                                     </li>
@@ -454,9 +454,9 @@
                                     <%--	<li runat="server" id="li_DownloadPracticaladmitcard"  visible="false">
                                         <a href="DownloadPracticaladmitcard.aspx" class="nav-link">Download Practical Admit Card</a>
                                     </li>--%>
-                                    <li runat="server" id="li_Theoryadmitcard">
+                                   <%-- <li runat="server" id="li_Theoryadmitcard">
                                         <a href="Theoryadmitcard.aspx" class="nav-link">Download Theory Admit Card</a>
-                                    </li>
+                                    </li>--%>
                                     <li runat="server" id="li_CORRECTIONDUMMYREPORT" visible="false">
                                         <a href="DummyCorrectionDetails.aspx" class="nav-link">Exam Report</a>
                                     </li>
