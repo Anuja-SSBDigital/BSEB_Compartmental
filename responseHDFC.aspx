@@ -112,7 +112,7 @@
                     <h2 style="margin: 0; font-size: 20px; font-weight: bold; color: #222;">BIHAR SCHOOL EXAMINATION BOARD
                     </h2>
                     <div style="font-size: 14px; color: #444; margin-top: 4px;">
-                        INTERMEDIATE REGISTRATION SESSION (2024-26)
+                        INTERMEDIATE SPECIAL & COMPARTMENTAL SESSION (2024-26)
                     </div>
                    <%-- <div style="font-size: 13px; color: #555;">
                         FOR THE INTERMEDIATE REGISTRATION,(SESSION 2025-27)

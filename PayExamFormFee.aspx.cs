@@ -858,7 +858,7 @@ swal({{
      "<input type='hidden' name='amount' value='" + amountInPaise + "'/>" +
      "<input type='hidden' name='currency' value='INR'/>" +
      "<input type='hidden' name='order_id' value='" + orderId + "'/>" +
-     "<input type='hidden' name='name' value='INTERMEDIATE ANNUAL EXAM SESSION 2026'/>" +
+     "<input type='hidden' name='name' value='INTERMEDIATE SPECIAL & COMPARTMENTAL EXAM SESSION 2026'/>" +
      "<input type='hidden' name='description' value='Payment Transaction'/>" +
      "<input type='hidden' name='callback_url' value='https://intermediate.biharboardonline.com/Exam26/responseHDFC.aspx'/>" +
      "<input type='hidden' name='cancel_url' value='https://intermediate.biharboardonline.com/Exam26/responseHDFC.aspx'/>" +
@@ -1007,8 +1007,8 @@ swal({{
                 // Create an HTML form for submitting the request to the payment gateway
                 string respString = "<html>" +
                                   "<body onload='document.forms[0].submit()'>" +   // Auto-submit on load
-                                 // "<form action=\"https://securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1\" method=\"post\">" +
-                                         "<form action=\"https://stage-securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1\" method=\"post\">" +
+                                  "<form action=\"https://securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1\" method=\"post\">" +
+                                         //"<form action=\"https://stage-securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1\" method=\"post\">" +
                                           "<input type=\"hidden\" name=\"encData\" value=\"" + encdata + "\" id=\"frm1\">" +
                                           "<input type=\"hidden\" name=\"clientCode\" value=\"" + clientCode + "\" id=\"frm2\">" +
                                           "<noscript><input type=\"submit\" value=\"Click here to continue\"></noscript>" + // fallback if JS is disabled
