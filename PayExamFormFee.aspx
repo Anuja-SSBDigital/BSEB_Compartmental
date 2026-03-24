@@ -456,12 +456,20 @@
         var currentPage = 1;
         var rowsPerPage = 100;
 
+        //document.addEventListener("DOMContentLoaded", function () {
+        //    setupSelectAll();
+        //    filterAndPaginate();
+        //    updateTotalAmount();
+        //});
         document.addEventListener("DOMContentLoaded", function () {
             setupSelectAll();
-            filterAndPaginate();
-            updateTotalAmount();
-        });
 
+            var tableBody = document.querySelector("#dataTable tbody tr");
+            if (tableBody) { // only run if table is visible
+                filterAndPaginate();
+                updateTotalAmount();
+            }
+        });
 
         function getSelectedData() {
             var ids = [];
@@ -643,9 +651,13 @@
         }
 
         function filterAndPaginate() {
-            var searchText = document.getElementById("searchInput").value.toLowerCase();
-            var rows = document.querySelectorAll("#dataTable tbody tr");
+            //var searchText = document.getElementById("searchInput").value.toLowerCase();
+            //var rows = document.querySelectorAll("#dataTable tbody tr");
+            var searchInputEl = document.getElementById("searchInput");
+            var searchText = searchInputEl ? searchInputEl.value.toLowerCase() : "";
 
+            var rows = document.querySelectorAll("#dataTable tbody tr");
+            if (!rows.length) return; // also guard if table isn't rendered yet
             rows.forEach(function (row) {
                 var RegistrationNo = row.cells[2].textContent.toLowerCase();
                 var studentName = row.cells[2].textContent.toLowerCase();
@@ -670,6 +682,7 @@
 
         function paginateFilteredTable() {
             var allRows = document.querySelectorAll("#dataTable tbody tr");
+            if (!allRows.length) return; // guard: table not rendered yet
             var visibleRows = Array.from(allRows).filter(function (row) {
                 return row.dataset.visible !== "false";
             });
@@ -697,8 +710,12 @@
             updateTotalAmount();
 
             var lblEntries = document.getElementById('<%= lblEntriesCount.ClientID %>');
+            if (lblEntries) { // add null check
             if (totalRows === 0) {
                 lblEntries.innerText = "No entries found";
+            } else {
+                lblEntries.innerText = `Showing ${start + 1} to ${Math.min(end, totalRows)} of ${totalRows} entries`;
+                }
             } else {
                 lblEntries.innerText = `Showing ${start + 1} to ${Math.min(end, totalRows)} of ${totalRows} entries`;
             }
