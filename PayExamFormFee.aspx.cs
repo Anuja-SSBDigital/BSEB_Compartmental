@@ -1,24 +1,25 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using log4net.Core;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Razorpay.Api;
+using Razorpay.Api.Errors;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Configuration;
 using System.Data;
+using System.Globalization;
+using System.IdentityModel.Protocols.WSTrust;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml;
-using Razorpay.Api;
-using System.Globalization;
-using System.IdentityModel.Protocols.WSTrust;
-using log4net.Core;
-using Razorpay.Api.Errors;
 
 
 
@@ -1264,4 +1265,30 @@ swal({
             }
         }
     }
+
+    [WebMethod]
+    public static string SaveCollegeProfile(string UDISECode, string PrincipalName, string PrincipalMobile, string PrincipalEmail, string SubDivisionName, string BlockName, string FullAddress, string PinCode)
+    {
+        try
+        {
+            if (System.Web.HttpContext.Current.Session["CollegeId"] == null)
+                return "SESSION_EXPIRED";
+
+            int collegeId = Convert.ToInt32(
+                System.Web.HttpContext.Current.Session["CollegeId"]
+            );
+
+            DBHelper db = new DBHelper();
+            db.InsertCollegeProfile(collegeId, UDISECode, PrincipalName, PrincipalMobile, PrincipalEmail, SubDivisionName, BlockName, FullAddress, PinCode);
+
+            System.Web.HttpContext.Current.Session["IsProfileCompleted"] = true;
+
+            return "SUCCESS";
+        }
+        catch (Exception ex)
+        {
+            return "ERROR: " + ex.Message;
+        }
+    }
+
 }
