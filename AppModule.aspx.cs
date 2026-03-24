@@ -51,7 +51,8 @@ public partial class AppModule : System.Web.UI.Page
        
         //Session["ActiveModule"] = "preexam";
        
-        Response.Redirect("DwnldComExamForm.aspx"); 
+        Response.Redirect("PayExamFormFee.aspx"); 
+        //Response.Redirect("DwnldComExamForm.aspx"); 
     }
 
     protected void lnkStudentRegistration_Click(object sender, EventArgs e)
