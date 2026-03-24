@@ -788,7 +788,8 @@
              
                 $.ajax({
                     type: "POST",
-                    url: "DwnldComExamForm.aspx/SaveCollegeProfile",
+                    url: "PayExamFormFee.aspx/SaveCollegeProfile",
+                    //url: "DwnldComExamForm.aspx/SaveCollegeProfile",
                     //url: "MasterPage.aspx/SaveCollegeProfile",
                     data: JSON.stringify(formData),
                     contentType: "application/json; charset=utf-8",
