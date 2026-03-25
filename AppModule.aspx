@@ -148,6 +148,36 @@
             font-weight: 500;
             text-align: center;
         }
+
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            background: #fff;
+            margin: 10px 0 15px;
+            position: relative;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marqueeMove 25s linear infinite; /* 👈 slower speed */
+            font-weight: bold;
+        }
+
+        /* ✅ Pause on hover */
+        .marquee-container:hover .marquee-content {
+            animation-play-state: paused;
+        }
+
+        @keyframes marqueeMove {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
     </style>
 </head>
 <body>
@@ -159,7 +189,7 @@
                 <h2><strong>Bihar</strong> School Examination Board</h2>
             </div>
             <div class="header-right">
-                <h2> <a href="AppModule.aspx" class="logout-link" title="">
+                <h2><a href="AppModule.aspx" class="logout-link" title="">
                     <i class="fa fa-fw fa-th"></i>My Modules
                 </a></h2>
 
@@ -168,45 +198,48 @@
                 </a>
             </div>
         </header>
-        <hr / style="color:#d2d6de">
+        <hr style="color: #d2d6de">
         <!-- Marquee -->
-        <marquee behavior="scroll" direction="left" scrollamount="3">
-            <span style="color: red;">
-                <i class="fa fa-phone"></i>Bihar School Examination Board Helpline : 0612-2230039
-            </span>
-            &nbsp;&nbsp;&nbsp;
-            <span style="color: blue;">For any query related to Student's Registration please contact at
-                <a href="mailto:bsebinterhelpdesk@gmail.com">
-                    <i class="fa fa-envelope"></i>bsebinterhelpdesk@gmail.com
-                </a>
-            </span>
-        </marquee>
-       <%--  <p class="mt-4" style="color:red;font-weight:bold;font-size: 20px;margin-left: 20px;">
+        <div class="marquee-container">
+            <div class="marquee-content">
+                <span style="color: red;">
+                    <i class="fa fa-phone"></i>
+                    Bihar School Examination Board Helpline : 0612-2230039
+                </span>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: blue;">For any query related to Student's Registration please contact at
+            <a href="mailto:bsebinterhelpdesk@gmail.com">
+                <i class="fa fa-envelope"></i>bsebinterhelpdesk@gmail.com
+            </a>
+        </span>
+            </div>
+        </div>
+        <%--  <p class="mt-4" style="color:red;font-weight:bold;font-size: 20px;margin-left: 20px;">
      नोट - पंजीयन फॉर्म भरने के पश्चात्  घोषणा पत्र अनिवार्य रूप से अपलोड करे। जिनका घोषणा पत्र अपलोड नहीं किया जायेगा उनका पंजीयन फॉर्म सबमिट नहीं माना जायेगा।
  </p>--%>
         <!-- Secondary Header (Modules + College Name) -->
         <div class="header-container">
             <div class="module-heading">Assigned Module(s)</div>
             <div class="module-heading">
-    +2 School/College Code & Name:
+                +2 School/College Code & Name:
     <br />
-    <% 
-        bool isAdmin = Session["CollegeName"] != null && Session["CollegeName"].ToString() == "Admin";
-        if (!isAdmin)
-        {
-    %>
-        <%: Session["CollegeCode"] != null ? Session["CollegeCode"].ToString() : "No College Code" %> |
+                <% 
+                    bool isAdmin = Session["CollegeName"] != null && Session["CollegeName"].ToString() == "Admin";
+                    if (!isAdmin)
+                    {
+                %>
+                <%: Session["CollegeCode"] != null ? Session["CollegeCode"].ToString() : "No College Code" %> |
     <% 
         }
     %>
-    <%: Session["CollegeName"] != null ? Session["CollegeName"].ToString() : "No College Name" %>
-</div>
+                <%: Session["CollegeName"] != null ? Session["CollegeName"].ToString() : "No College Name" %>
+            </div>
 
         </div>
 
         <!-- Module Cards -->
         <div class="modules">
-          <%--  <asp:LinkButton ID="lnkStudentRegistration" runat="server" OnClick="lnkStudentRegistration_Click" CssClass="module-card green">
+            <%--  <asp:LinkButton ID="lnkStudentRegistration" runat="server" OnClick="lnkStudentRegistration_Click" CssClass="module-card green">
                 <div class="module-icon">
                     <img src="assets/img/registered.gif" alt="Student Registration Icon" />
                 </div>
