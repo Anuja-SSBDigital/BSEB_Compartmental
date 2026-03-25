@@ -212,8 +212,8 @@
                                  NEW: Inter Special & Compartmental Application Forms
                                  Download link — clicking downloads ALL 4 PDFs at once
                                  ===================================================== -->
-                            <a href="javascript:void(0);"  onclick="downloadAllExamForms()" class="download-link-item" style="display: ruby !important;">
-                                <i class="fas fa-file-download dl-icon"></i><div class="dl-text" style="margin-left: 8px;"> Inter Special &amp; Compartmental Examination 2026 — Application Forms
+                            <a href="javascript:void(0);"  onclick="downloadAllExamForms()" class="download-link-item" style="display: ruby !important;  font-size: 25px;">
+                                <i class="fas fa-file-download dl-icon"></i><div style="margin-left: 8px;text-decoration: underline !important;"> Inter Special &amp; Compartmental Examination 2026 — Application Forms
                                  <%--   <span class="notification-badge">NEW</span>
                                     <small>
                                         Click to download all forms:
@@ -221,6 +221,9 @@
                                         Special Commerce &bull; Compartmental Science
                                     </small>--%>
                                 </div>
+                            </a>
+                              <a href="assets/Notifications/Inter Special & Compart Vigyapti 2026.pdf"  download="Inter Special & Compart Vigyapti 2026.pdf"  style="display: block; font-size: 24px;" class="download-link-item mt-4">
+                                <i class="fas fa-file-download" style="margin-right: 4px;"></i>Click here to download vigyapti for Inter Special &amp; Compartmental Examination 2026
                             </a>
                             <%-- <p style="color: #e66000; font-weight: 500; font-size: 16px;">
                                 <i class="fas fa-home"></i>नोट: यहाँ पर आप महत्वपूर्ण सूचना देख सकते हैं।
