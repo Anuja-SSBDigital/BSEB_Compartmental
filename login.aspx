@@ -161,24 +161,24 @@
                     <div class="circle bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-1" style="width: 28px; height: 28px; font-size: 13px;">1</div>
                     <small style="font-size: 12px;">Login</small>
                 </div>
-                <div class="step-line flex-grow-1"></div>
+               <%-- <div class="step-line flex-grow-1"></div>
                 <div class="step-item text-center">
                     <div class="circle bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-1" style="width: 28px; height: 28px; font-size: 13px;">2</div>
                     <small style="font-size: 12px;">Download Examination form </small>
-                </div>
+                </div>--%>
                 <div class="step-line flex-grow-1"></div>
                 <div class="step-item text-center">
-                    <div class="circle bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-1" style="width: 28px; height: 28px; font-size: 13px;">3</div>
+                    <div class="circle bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-1" style="width: 28px; height: 28px; font-size: 13px;">2</div>
                     <small style="font-size: 12px;">Examination payment </small>
                 </div>
                 <div class="step-line flex-grow-1"></div>
                 <div class="step-item text-center">
-                    <div class="circle bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-1" style="width: 28px; height: 28px; font-size: 13px;">4</div>
+                    <div class="circle bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-1" style="width: 28px; height: 28px; font-size: 13px;">3</div>
                     <small style="font-size: 12px;">Payment Status</small>
                 </div>
                 <div class="step-line flex-grow-1"></div>
                 <div class="step-item text-center">
-                    <div class="circle bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-1" style="width: 28px; height: 28px; font-size: 13px;">5</div>
+                    <div class="circle bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-1" style="width: 28px; height: 28px; font-size: 13px;">4</div>
                     <small style="font-size: 12px;">Fill Examination Form</small>
                 </div>
                 <%-- <div class="step-line flex-grow-1"></div>--%>
@@ -188,7 +188,7 @@
                 </div>--%>
                 <div class="step-line flex-grow-1"></div>
                 <div class="step-item text-center">
-                    <div class="circle bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-1" style="width: 28px; height: 28px; font-size: 13px;">6</div>
+                    <div class="circle bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-1" style="width: 28px; height: 28px; font-size: 13px;">5</div>
                     <small style="font-size: 12px;">View Submitted Form</small>
                 </div>
             </div>
@@ -206,6 +206,22 @@
                         <div class="right-section d-flex flex-column h-100">
                             <h4 class="mb-3 text-center">Information And Notifications</h4>
                             <hr>
+
+                            
+                            <!-- =====================================================
+                                 NEW: Inter Special & Compartmental Application Forms
+                                 Download link — clicking downloads ALL 4 PDFs at once
+                                 ===================================================== -->
+                            <a href="javascript:void(0);"  onclick="downloadAllExamForms()" class="download-link-item" style="display: ruby !important;">
+                                <i class="fas fa-file-download dl-icon"></i><div class="dl-text" style="margin-left: 8px;"> Inter Special &amp; Compartmental Examination 2026 — Application Forms
+                                 <%--   <span class="notification-badge">NEW</span>
+                                    <small>
+                                        Click to download all forms:
+                                        Special Vocational &bull; Compartmental Arts &bull;
+                                        Special Commerce &bull; Compartmental Science
+                                    </small>--%>
+                                </div>
+                            </a>
                             <%-- <p style="color: #e66000; font-weight: 500; font-size: 16px;">
                                 <i class="fas fa-home"></i>नोट: यहाँ पर आप महत्वपूर्ण सूचना देख सकते हैं।
                             </p>--%>
@@ -236,9 +252,9 @@
    Click here for Intermediate Dummy Admit Card (Student Login)
 </a>--%>
 
-                            <script>
+ <script>
 							
-							function showClosedAlert() {
+function showClosedAlert() {
     Swal.fire({
         title: 'Date Closed',
         text: 'Dummy Admit Card download window has been closed.',
@@ -246,25 +262,79 @@
         confirmButtonText: 'OK',
         confirmButtonColor: '#3059c4'
     });
-}
-                                function downloadAllFiles() {
-                                    const files = [
-                                        "assets/Notifications/Vocational-Ex-Students.pdf",
-                                        "assets/Notifications/Art-Ex-Student's.pdf",
-                                        "assets/Notifications/Commerce-Ex-Student's.pdf",
-                                        "assets/Notifications/Science-Ex-Students.pdf"
-                                    ];
+     }
+     /* ============================================================
+        NEW FUNCTION — downloads all 4 Inter Spl & Compartmental PDFs
+        File paths must match exactly what is placed in your
+        assets/Notifications/ folder on the server.
+        ============================================================ */
+     function downloadAllExamForms() {
+         const files = [
+             {
+                 path: "assets/Notifications/Special_Vocational_2026.pdf",
+                 name: "Special_Vocational_2026.pdf"
+             },
+             {
+                 path: "assets/Notifications/Compartmental_Arts_2026.pdf",
+                 name: "Compartmental_Arts_2026.pdf"
+             },
+             {
+                 path: "assets/Notifications/Special_Commerce_2026.pdf",
+                 name: "Special_Commerce_2026.pdf"
+             },
+             {
+                 path: "assets/Notifications/Compartmental_Science_2026.pdf",
+                 name: "Compartmental_Science_2026.pdf"
+             },
+             {
+                 path: "assets/Notifications/Special_Arts_2026.pdf",
+                 name: "Special_Arts_2026.pdf"
+             },
+             {
+                 path: "assets/Notifications/Compartmental_Commerce_2026.pdf",
+                 name: "Compartmental_Commerce_2026.pdf"
+             },
+             {
+                 path: "assets/Notifications/Special_Science_2026.pdf",
+                 name: "Special_Science_2026.pdf"
+             },
+             {
+                 path: "assets/Notifications/Compartmental_vocational_2026.pdf",
+                 name: "Compartmental_vocational_2026.pdf"
+             }
+         ];
 
-                                    files.forEach(file => {
-                                        const a = document.createElement("a");
-                                        a.href = file;
-                                        a.download = file.split('/').pop(); // keep original filename
-                                        document.body.appendChild(a);
-                                        a.click();
-                                        document.body.removeChild(a);
-                                    });
-                                }
-                            </script>
+         // Stagger each download slightly so browsers don't block them
+         files.forEach(function (file, index) {
+             setTimeout(function () {
+                 var a = document.createElement("a");
+                 a.href = file.path;
+                 a.download = file.name;
+                 a.target = "_blank";          // fallback if download attr unsupported
+                 document.body.appendChild(a);
+                 a.click();
+                 document.body.removeChild(a);
+             }, index * 400);                  // 400 ms gap between each download
+         });
+     }
+                                //function downloadAllFiles() {
+                                //    const files = [
+                                //        "assets/Notifications/Vocational-Ex-Students.pdf",
+                                //        "assets/Notifications/Art-Ex-Student's.pdf",
+                                //        "assets/Notifications/Commerce-Ex-Student's.pdf",
+                                //        "assets/Notifications/Science-Ex-Students.pdf"
+                                //    ];
+
+                                //    files.forEach(file => {
+                                //        const a = document.createElement("a");
+                                //        a.href = file;
+                                //        a.download = file.split('/').pop(); // keep original filename
+                                //        document.body.appendChild(a);
+                                //        a.click();
+                                //        document.body.removeChild(a);
+                                //    });
+                                //}
+ </script>
 
                             <%--<a href="assets/Notifications/CommercePrivate.pdf"
                                 download="CommercePrivate.pdf"
@@ -336,9 +406,8 @@
 
 
         <!-- Scripts -->
-		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="assets/bundles/sweetalert/sweetalert.min.js"></script>
-        <script src="assets/js/page/sweetalert.js"></script>
+       
         <script>
             function generateCaptcha() {
                 const n1 = Math.floor(Math.random() * 20) + 1;
