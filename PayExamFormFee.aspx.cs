@@ -1279,7 +1279,8 @@ swal({
             );
 
             DBHelper db = new DBHelper();
-            db.InsertCollegeProfile(collegeId, UDISECode, PrincipalName, PrincipalMobile, PrincipalEmail, SubDivisionName, BlockName, FullAddress, PinCode);
+            db.SaveCollegeProfile(collegeId, UDISECode, PrincipalName, PrincipalMobile, PrincipalEmail, SubDivisionName, BlockName, FullAddress, PinCode);
+            //db.InsertCollegeProfile(collegeId, UDISECode, PrincipalName, PrincipalMobile, PrincipalEmail, SubDivisionName, BlockName, FullAddress, PinCode);
 
             System.Web.HttpContext.Current.Session["IsProfileCompleted"] = true;
 
