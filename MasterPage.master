@@ -443,6 +443,9 @@
                                     <li runat="server" id="li_paymentsummary">
                                         <a href="PaymentSummary.aspx" class="nav-link">Payment Summary</a>
                                     </li>
+                                    <li runat="server" id="li_CollegeProfile">
+                                        <a href="CollegeProfile.aspx" class="nav-link">College Profile</a>
+                                    </li>
                                     <%--<li runat="server" id="li_Downloadadmitcard">
                                         <a href="Downloadadmitcard.aspx" class="nav-link">Second Dummy Admit Card</a>
                                     </li>--%>
