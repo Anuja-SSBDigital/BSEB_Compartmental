@@ -69,6 +69,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
                 li_CORRECTIONDUMMYREPORT.Visible = true;
                 liRegisteredList.Visible = true;
                 li_ExaminationForm.Visible = true;
+                //li_CollegeProfile.Visible = true;
                // li_ExamDwnld.Visible = true;
                 //li_DownloadPracticaladmitcard.Visible = true;
                 //liExmchallanrecall.Visible = true;
@@ -83,6 +84,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
                 // College menus
 
                 li_ExaminationForm.Visible = true;
+                li_CollegeProfile.Visible = true;
                // li_ExamDwnld.Visible = true;
                 li_PayExamFormFee.Visible = true;
                 liRegisteredList.Visible = true;
