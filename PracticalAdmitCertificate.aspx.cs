@@ -184,6 +184,7 @@ public partial class PracticalAdmitCertificate : System.Web.UI.Page
             // Faculty Logic
             DataRowView drv = (DataRowView)e.Item.DataItem;
             string facultyName = drv["FacultyName"].ToString().Trim().ToUpper();
+            string ExamTypeName = drv["ExamTypeName"].ToString().Trim().ToUpper();
             bool hasVocational = drv["HasVocationalSubjects"] != DBNull.Value && Convert.ToBoolean(drv["HasVocationalSubjects"]);
 
             string hindiFaculty = "";
@@ -211,12 +212,17 @@ public partial class PracticalAdmitCertificate : System.Web.UI.Page
                 trVocational.Visible = false;
                 liExamNote.InnerText = "जाँच परीक्षा में गैर-उत्प्रेषित या जाँच परीक्षा में अनुपस्थित छात्र/छात्रा इन्टरमीडिएट वार्षिक प्रायोगिक परीक्षा, 2026 (व्यावसायिक) में कदापि सम्मिलित नहीं हो सकते हैं।";
             }
+            else if (ExamTypeName == "COMPARTMENTAL")
+            {
+                lblExamTitle.Text = "INTERMEDIATE COMPARTMENTAL EXAMINATION, 2026";
+                lblExamTitleHindi.Text = "इंटरमीडिएट कम्पार्टमेंटल परीक्षा, 2026";
+            }
             else
             {
                 phFaculty.Visible = true;
                 lblFacultyHindi.Text = "<label><strong>" + hindiFaculty + "</strong></label>";
-                lblExamTitle.Text = "INTERMEDIATE ANNUAL EXAMINATION, 2026";
-                lblExamTitleHindi.Text = "इंटरमीडिएट वार्षिक परीक्षा, 2026";
+                lblExamTitle.Text = "INTERMEDIATE SPECIAL EXAMINATION, 2026";
+                lblExamTitleHindi.Text = "इंटरमीडिएट विशेष परीक्षा, 2026";
                 lblExamSubjectHindi.Text = "महाविद्यालय / +2 विद्यालय प्रधान का हस्ताक्षर एवं मुहर";
                 lblCollegeName.Text = "कॉलेज/+2 स्कूल का नाम:";
                 // Show all
@@ -297,8 +303,8 @@ public partial class PracticalAdmitCertificate : System.Web.UI.Page
                 targetRow.Cells.Add(tdExamDate);
             }
             // Exam dates
-            lblExamStartDate.Text = "10/01/2026";
-            lblExamToDate.Text = "20/01/2026";
+            lblExamStartDate.Text = "13/05/2026";
+            lblExamToDate.Text = "14/05/2026";
         }
     }
 
