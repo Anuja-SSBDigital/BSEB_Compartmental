@@ -211,9 +211,9 @@ public partial class TheoryAdmitCertificate : System.Web.UI.Page
             if (facultyName == "VOCATIONAL")
             {
                 phFaculty.Visible = false;
-                lblExamTitle.Text = "INTERMEDIATE ANNUAL (VOCATIONAL COURSE) EXAMINATION, 2026";
-                lblExamTitleHindi.Text = "इंटरमीडिएट वार्षिक (व्यावसायिक पाठ्यक्रम) परीक्षा, 2026";
-                lblExamSubjectHindi.Text = "सैद्धान्तिक वार्षिक (व्यावसायिक पाठ्यक्रम) परीक्षा के विषय (निर्धारित परीक्षा कार्यक्रम सहित)";
+                lblExamTitle.Text = "INTERMEDIATE SPECIAL (VOCATIONAL COURSE) EXAMINATION, 2026";
+                lblExamTitleHindi.Text = "इंटरमीडिएट विशेष (व्यावसायिक पाठ्यक्रम) परीक्षा, 2026";
+                lblExamSubjectHindi.Text = "सैद्धान्तिक विशेष (व्यावसायिक पाठ्यक्रम) परीक्षा के विषय (निर्धारित परीक्षा कार्यक्रम सहित)";
                 lblCollegeName.Text = "+2 स्कूल का नाम";
 
                 if (tdElective1 != null)
@@ -247,7 +247,7 @@ public partial class TheoryAdmitCertificate : System.Web.UI.Page
 
                 if (tdElective3 != null)
                     tdElective3.InnerHtml = "ऐच्छिक विषय-3";
-                lblExamSubjectHindi.Text = "सैद्धान्तिक वार्षिक परीक्षा के विषय (निर्धारित परीक्षा कार्यक्रम सहित)";
+                lblExamSubjectHindi.Text = "सैद्धान्तिक विशेष परीक्षा के विषय (निर्धारित परीक्षा कार्यक्रम सहित)";
                 lblExamSchoolHindi.Text = "महाविद्यालय / +2 विद्यालय प्रधान का हस्ताक्षर एवं मुहर";
                 trVocational.Visible = hasVocational;
             }
