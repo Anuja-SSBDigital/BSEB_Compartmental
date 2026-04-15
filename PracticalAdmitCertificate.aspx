@@ -462,7 +462,7 @@
                                 <td style="font-weight: 600; font-size: larger;"><%# Eval("ElectiveSubject3Name") %> <%# Eval("ElectiveSubject3PaperType") %></td>
                             </tr>
                             <tr runat="server" id="trAdditional">
-                                <td>अतिरिक्त विषय</td>
+                                 <td  runat="server" id="trAdditionalSubjectgrpname"></td>
                                 <td style="font-weight: 600; font-size: larger;"><%# Eval("AdditionalSubjectCode") %></td>
                                 <td style="font-weight: 600; font-size: larger;"><%# Eval("AdditionalSubjectName") %> <%# Eval("AdditionalSubjectPaperType") %></td>
                                 <%-- <td style="text-align: center;"><%# Eval("AdditionalSubjectDate") %></td>--%>
