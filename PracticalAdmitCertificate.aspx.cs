@@ -177,6 +177,8 @@ public partial class PracticalAdmitCertificate : System.Web.UI.Page
             HtmlTableRow trAdditional = (HtmlTableRow)e.Item.FindControl("trAdditional");
             HtmlTableRow trVocational = (HtmlTableRow)e.Item.FindControl("trVocational");
 
+            HtmlTableCell trAdditionalSubjectgrpname = e.Item.FindControl("trAdditionalSubjectgrpname") as HtmlTableCell;
+            
 
             Label lblCollegeName = e.Item.FindControl("lblCollegeName") as Label;
             HtmlGenericControl liExamNote = (HtmlGenericControl)e.Item.FindControl("liExamNote");
@@ -194,7 +196,15 @@ public partial class PracticalAdmitCertificate : System.Web.UI.Page
                 case "SCIENCE": hindiFaculty = "संकाय: <strong>विज्ञान</strong>"; break;
                 case "COMMERCE": hindiFaculty = "संकाय: <strong>वाणिज्य</strong>"; break;
             }
-
+            if (ExamTypeName == "QUALIFYING")
+            {
+                //
+                trAdditionalSubjectgrpname.InnerHtml = "Qualifying Subject ";
+            }
+            else
+            {
+                trAdditionalSubjectgrpname.InnerHtml = "अतिरिक्त विषय(Additional Subject)";
+            }
             if (facultyName == "VOCATIONAL")
             {
                 phFaculty.Visible = false;
