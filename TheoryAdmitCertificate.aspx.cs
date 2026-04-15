@@ -231,6 +231,14 @@ public partial class TheoryAdmitCertificate : System.Web.UI.Page
             {
                 lblExamTitle.Text = "INTERMEDIATE COMPARTMENTAL EXAMINATION, 2026";
                 lblExamTitleHindi.Text = "इंटरमीडिएट कम्पार्टमेंटल परीक्षा, 2026";
+                if (tdElective1 != null)
+                    tdElective1.InnerHtml = "ऐच्छिक विषय-1";
+
+                if (tdElective2 != null)
+                    tdElective2.InnerHtml = "ऐच्छिक विषय-2";
+
+                if (tdElective3 != null)
+                    tdElective3.InnerHtml = "ऐच्छिक विषय-3";
             }
             else
             {
