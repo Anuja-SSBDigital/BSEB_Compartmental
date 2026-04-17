@@ -226,6 +226,13 @@ public partial class PracticalAdmitCertificate : System.Web.UI.Page
             {
                 lblExamTitle.Text = "INTERMEDIATE COMPARTMENTAL EXAMINATION, 2026";
                 lblExamTitleHindi.Text = "इंटरमीडिएट कम्पार्टमेंटल परीक्षा, 2026";
+                trElective1.Visible = true;
+                trElective2.Visible = true;
+                trElective3.Visible = true;
+                trAdditional.Visible = true;
+                trVocational.Visible = hasVocational;
+
+                //trAdditional.Visible = true;
             }
             else
             {
