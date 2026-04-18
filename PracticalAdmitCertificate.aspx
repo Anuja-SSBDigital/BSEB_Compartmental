@@ -298,7 +298,7 @@
                                     <br>
                                     <strong>प्रायोगिक परीक्षा का प्रवेश-पत्र</strong>
                                     <br />
-                                    <strong>Admit Card For Practical Examination </strong>
+                                    <strong>Admit Card of Practical Examination </strong>
                                 </div>
                             </div>
                             <div class="col-md-3">
