@@ -91,6 +91,13 @@ public partial class TheoryAdmitCertificate : System.Web.UI.Page
 
                                                 combinedRow["StudentSignaturePath"] = string.IsNullOrEmpty(signatureFileName) ? (object)DBNull.Value : "~/Uploads/StudentsReg/Signatures/" + signatureFileName;
                                             }
+                                            else if (col.ColumnName == "Gender" || col.ColumnName == "MaritalStatus")
+                                            {
+                                                if (studentRow[col] == DBNull.Value)
+                                                    combinedRow[col.ColumnName] = DBNull.Value;
+                                                else
+                                                    combinedRow[col.ColumnName] = studentRow[col].ToString().ToUpper();
+                                            }
                                             else
                                             {
 
@@ -229,6 +236,7 @@ public partial class TheoryAdmitCertificate : System.Web.UI.Page
             }
             else if (ExamTypeName == "COMPARTMENTAL")
             {
+                lblFacultyHindi.Text = "<label><strong>" + hindiFaculty + "</strong></label>";
                 lblExamTitle.Text = "INTERMEDIATE COMPARTMENTAL EXAMINATION, 2026";
                 lblExamTitleHindi.Text = "इंटरमीडिएट कम्पार्टमेंटल परीक्षा, 2026";
                 lblCollegeName.Text = "कॉलेज/+2 स्कूल का नाम";
