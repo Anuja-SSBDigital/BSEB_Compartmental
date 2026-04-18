@@ -421,7 +421,7 @@ public partial class TheoryAdmitCertificate : System.Web.UI.Page
                 if (subjectGroup.StartsWith("Compulsory subject group-1"))
                 {
                     targetRow["CompulsorySubject1Code"] = subjectCode != -1 ? subjectCode.ToString() : "";
-                    targetRow["CompulsorySubject1Name"] = subjectName;
+                    targetRow["CompulsorySubject1Name"] = subjectName.ToUpper();
                     if (r["ExamDate"] != DBNull.Value) targetRow["CompulsorySubject1Date"] = Convert.ToDateTime(r["ExamDate"]).ToString("dd-MM-yyyy");
                     targetRow["CompulsorySubject1Shift"] = r["ExamShift"];
                     targetRow["CompulsorySubject1Time"] = r["ExamTime"];
@@ -430,7 +430,7 @@ public partial class TheoryAdmitCertificate : System.Web.UI.Page
                 else if (subjectGroup.StartsWith("Compulsory subject group-2"))
                 {
                     targetRow["CompulsorySubject2Code"] = subjectCode != -1 ? subjectCode.ToString() : "";
-                    targetRow["CompulsorySubject2Name"] = subjectName;
+                    targetRow["CompulsorySubject2Name"] = subjectName.ToUpper();
                     if(r["ExamDate"] != DBNull.Value) targetRow["CompulsorySubject2Date"] = Convert.ToDateTime(r["ExamDate"]).ToString("dd-MM-yyyy");
                     targetRow["CompulsorySubject2Shift"] = r["ExamShift"];
                     targetRow["CompulsorySubject2Time"] = r["ExamTime"];
@@ -439,7 +439,7 @@ public partial class TheoryAdmitCertificate : System.Web.UI.Page
                 else if (subjectGroup.Contains("Compulsory") && !subjectGroup.StartsWith("Compulsory subject group-"))
                 {
                     targetRow["CompulsorySubject3Code"] = subjectCode != -1 ? subjectCode.ToString() : "";
-                    targetRow["CompulsorySubject3Name"] = subjectName;
+                    targetRow["CompulsorySubject3Name"] = subjectName.ToUpper();
                     if (r["ExamDate"] != DBNull.Value) targetRow["CompulsorySubject3Date"] = Convert.ToDateTime(r["ExamDate"]).ToString("dd-MM-yyyy");
                     targetRow["CompulsorySubject3Shift"] = r["ExamShift"];
                     targetRow["CompulsorySubject3Time"] = r["ExamTime"];
@@ -474,7 +474,7 @@ public partial class TheoryAdmitCertificate : System.Web.UI.Page
                 string paperType = sub["PaperType"] != DBNull.Value ? sub["PaperType"].ToString() : "";
 
                 targetRow["ElectiveSubject" + (i + 1) + "Code"] = code != -1 ? code.ToString() : "";
-                targetRow["ElectiveSubject" + (i + 1) + "Name"] = name;
+                targetRow["ElectiveSubject" + (i + 1) + "Name"] = name.ToUpper();
                 targetRow["ElectiveSubject" + (i + 1) + "PaperType"] = paperType;
                 if (sub["ExamDate"] != DBNull.Value)
                 {
@@ -496,7 +496,7 @@ public partial class TheoryAdmitCertificate : System.Web.UI.Page
                 string name = sub["SubjectName"] != DBNull.Value ? sub["SubjectName"].ToString() : "";
 
                 targetRow["AdditionalSubjectCode"] = code != -1 ? code.ToString() : "";
-                targetRow["AdditionalSubjectName"] = name;
+                targetRow["AdditionalSubjectName"] = name.ToUpper();
                 if (sub["ExamDate"] != DBNull.Value) targetRow["AdditionalSubjectDate"] = Convert.ToDateTime(sub["ExamDate"]).ToString("dd-MM-yyyy");
                 targetRow["AdditionalSubjectShift"] = sub["ExamShift"];
                 targetRow["AdditionalSubjectTime"] = sub["ExamTime"];
@@ -512,7 +512,7 @@ public partial class TheoryAdmitCertificate : System.Web.UI.Page
                 //targetRow["VocationalSubjectCode1Code"] = code != -1 ? code.ToString() : "";
                 //targetRow["VocationalSubjectName1Name"] = name;
                 targetRow["VocationalSubjectCode"] = code != -1 ? code.ToString() : "";
-                targetRow["VocationalSubjectName"] = name;
+                targetRow["VocationalSubjectName"] = name.ToUpper();
                 if (sub["ExamDate"] != DBNull.Value) targetRow["VocationalSubjectDate"] = Convert.ToDateTime(sub["ExamDate"]).ToString("dd-MM-yyyy");
                 targetRow["VocationalSubjectShift"] = sub["ExamShift"];
                 targetRow["VocationalSubjectTime"] = sub["ExamTime"];
