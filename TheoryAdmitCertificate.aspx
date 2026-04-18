@@ -10,10 +10,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <%-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Noto+Sans+Devanagari:wght@100..900&family=Noto+Serif+Devanagari:wght@100..900&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">--%>
+    --%>
+    <link href="https://fonts.googleapis.com/css2?family=Carlito:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: none;
+            font-family: 'Carlito', "Calibri", sans-serif;
         }
 
         .container {
@@ -225,10 +226,10 @@
                     </div>
 
 
-                    <table style="width: 100%; border-collapse: collapse; font-family: system-ui">
+                    <table style="width: 100%; border-collapse: collapse;">
                         <tr>
-                            <td style="width: 85%; vertical-align: top; padding-right: 10px; font-family: sans-serif; line-height: 1.8;">
-                                <table style="width: 100%; font-size: 16px; line-height: 2; border-collapse: collapse; font-weight: 600; font-family: system-ui;">
+                            <td style="width: 85%; vertical-align: top; padding-right: 10px;  line-height: 1.8;">
+                                <table style="width: 100%; font-size: 17px; line-height: 2; border-collapse: collapse; font-weight: 600;">
 
                                     <asp:HiddenField ID="hfFacultyId" runat="server"
                                         Value='<%# Eval("FacultyId") %>' />
