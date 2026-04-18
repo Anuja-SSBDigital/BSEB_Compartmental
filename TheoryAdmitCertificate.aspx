@@ -197,7 +197,7 @@
                                     <strong>बिहार विद्यालय परीक्षा समिति</strong><br />
                                     <strong>BIHAR SCHOOL EXAMINATION BOARD</strong>
                                 </div>
-                                <div class="sub-title h5">
+                                <div class="sub-title" style="font-size: 18px;">
                                     <strong>
                                         <asp:Label ID="lblExamTitleHindi" runat="server" CssClass="hindi-title" /></strong>
                                     <br />
@@ -228,7 +228,7 @@
 
                     <table style="width: 100%; border-collapse: collapse;">
                         <tr>
-                            <td style="width: 85%; vertical-align: top; padding-right: 10px;  line-height: 1.8;">
+                            <td style="width: 85%; vertical-align: top; padding-right: 10px; line-height: 1.8;">
                                 <table style="width: 100%; font-size: 17px; line-height: 2; border-collapse: collapse; font-weight: 600;">
 
                                     <asp:HiddenField ID="hfFacultyId" runat="server"
