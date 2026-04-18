@@ -137,7 +137,9 @@
         ol {
             list-style-type: decimal;
         }
-
+        .title{
+            font-weight:600;
+        }
         .container {
             padding: 30px;
             margin-top: 20px;
@@ -282,11 +284,11 @@
                                 <img src="assets/img/bsebimage.jpg" alt="Bihar Board Logo" class="logo">
                             </div>
                             <div class="col-md-6">
-                                <div class="title">
+                                <div class="h5 title">
                                     <strong>बिहार विद्यालय परीक्षा समिति</strong><br>
                                     <strong>BIHAR SCHOOL EXAMINATION BOARD </strong>
                                 </div>
-                                <div class="sub-title">
+                                <div class="sub-title h5">
                                     <strong>
                                         <asp:Label ID="lblExamTitleHindi" runat="server" CssClass="hindi-title" /></strong>
                                     <br />
