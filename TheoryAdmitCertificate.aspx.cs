@@ -91,7 +91,7 @@ public partial class TheoryAdmitCertificate : System.Web.UI.Page
 
                                                 combinedRow["StudentSignaturePath"] = string.IsNullOrEmpty(signatureFileName) ? (object)DBNull.Value : "~/Uploads/StudentsReg/Signatures/" + signatureFileName;
                                             }
-                                            else if (col.ColumnName == "Gender" || col.ColumnName == "MaritalStatus")
+                                            else if (col.ColumnName == "Gender" || col.ColumnName == "MaritalStatus" || col.ColumnName == "ExamTypeName")
                                             {
                                                 if (studentRow[col] == DBNull.Value)
                                                     combinedRow[col.ColumnName] = DBNull.Value;
