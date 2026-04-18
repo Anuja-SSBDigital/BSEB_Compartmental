@@ -289,7 +289,7 @@
                                     <strong>बिहार विद्यालय परीक्षा समिति</strong><br>
                                     <strong>BIHAR SCHOOL EXAMINATION BOARD </strong>
                                 </div>
-                                <div class="sub-title h5">
+                                <div class="sub-title" style="font-size: 18px;">
                                     <strong>
                                         <asp:Label ID="lblExamTitleHindi" runat="server" CssClass="hindi-title" /></strong>
                                     <br />
