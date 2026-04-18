@@ -100,6 +100,10 @@
         li {
             color: black;
         }
+
+        .title {
+            font-weight: 600;
+        }
         /*@media print {
             body {
                 margin: 0;
@@ -188,15 +192,15 @@
                                 <img src="assets/img/bsebimage.jpg" alt="Bihar Board Logo" class="logo" />
                             </div>
                             <div class="col-md-6 text-center">
-                                <div class="title">
+                                <div class="title h5">
                                     <strong>बिहार विद्यालय परीक्षा समिति</strong><br />
                                     <strong>BIHAR SCHOOL EXAMINATION BOARD</strong>
                                 </div>
-                                <div class="sub-title">
+                                <div class="sub-title h5">
                                     <strong>
                                         <asp:Label ID="lblExamTitleHindi" runat="server" CssClass="hindi-title" /></strong>
                                     <br />
-                                    <strong style="font-size: 15px;">
+                                    <strong>
                                         <asp:Label ID="lblExamTitle" runat="server" CssClass="english-title" /><br />
                                     </strong>
                                     <strong>सैद्धान्तिक परीक्षा का प्रवेश-पत्र</strong><br />
@@ -310,7 +314,7 @@
                         </tr>
                     </table>
 
-                    <table class="table table-details text-center align-middle" style="font-size: 13px; border: 2px solid #000;">
+                    <table class="table table-details text-center align-middle" style="font-size: 15px; border: 2px solid #000;">
                         <thead>
                             <tr>
                                 <%--<th colspan="7">सैद्धान्तिक वार्षिक परीक्षा के विषय (निरधारित परीक्षा कार्यक्रम सहित)</th>--%>
@@ -335,10 +339,10 @@
                                 <td rowspan="2">अनिवार्य विषय<br>
                                     (Compulsory Subjects)</td>
                                 <td>भाषा विषय-1</td>
-                                <td>
+                                <td style="font-size: large;">
                                     <%# "<strong>" + Eval("CompulsorySubject1Code") + "</strong>" %>
                                 </td>
-                                <td>
+                                <td style="font-size: large;">
                                     <%# "<strong>" + Eval("CompulsorySubject1Name") %>  <%# Eval("CompulsorySubject1PaperType") + "</strong>" %></td>
                                 <td><%# Eval("CompulsorySubject1Date") %></td>
                                 <td><%# Eval("CompulsorySubject1Shift") %></td>
@@ -347,9 +351,9 @@
                             </tr>
                             <tr>
                                 <td>भाषा विषय-2</td>
-                                <td>
+                                <td style="font-size: large;">
                                     <%# "<strong>" + Eval("CompulsorySubject2Code") + "</strong>" %></td>
-                                <td>
+                                <td style="font-size: large;">
                                     <%# "<strong>" + Eval("CompulsorySubject2Name") %>    <%# Eval("CompulsorySubject2PaperType") + "</strong>" %></td>
                                 <td><%# Eval("CompulsorySubject2Date") %></td>
                                 <td><%# Eval("CompulsorySubject2Shift") %></td>
@@ -361,9 +365,9 @@
                                 <td rowspan="3">ऐच्छिक विषय<br>
                                     (Elective Subjects)</td>
                                 <td id="tdElective1" runat="server"></td>
-                                <td>
+                                <td style="font-size: large;">
                                     <%# "<strong>" + Eval("ElectiveSubject1Code") + "</strong>" %></td>
-                                <td>
+                                <td style="font-size: large;">
                                     <%# "<strong>" + Eval("ElectiveSubject1Name") %>  <%# Eval("ElectiveSubject1PaperType")  + "</strong>" %></td>
                                 <td><%# Eval("ElectiveSubject1Date") %></td>
                                 <td><%# Eval("ElectiveSubject1Shift") %></td>
@@ -372,9 +376,9 @@
                             </tr>
                             <tr>
                                 <td id="tdElective2" runat="server"></td>
-                                <td>
+                                <td style="font-size: large;">
                                     <%# "<strong>" + Eval("ElectiveSubject2Code") + "</strong>" %></td>
-                                <td>
+                                <td style="font-size: large;">
                                     <%# "<strong>" + Eval("ElectiveSubject2Name") %>  <%# Eval("ElectiveSubject2PaperType") + "</strong>" %></td>
                                 <td><%# Eval("ElectiveSubject2Date") %></td>
                                 <td><%# Eval("ElectiveSubject2Shift") %></td>
@@ -383,8 +387,8 @@
                             </tr>
                             <tr>
                                 <td id="tdElective3" runat="server"></td>
-                                <td><%# "<strong>" + Eval("ElectiveSubject3Code") + "</strong>" %></td>
-                                <td><%# "<strong>" + Eval("ElectiveSubject3Name") %>  <%# Eval("ElectiveSubject3PaperType") + "</strong>" %></td>
+                                <td style="font-size: large;"><%# "<strong>" + Eval("ElectiveSubject3Code") + "</strong>" %></td>
+                                <td style="font-size: large;"><%# "<strong>" + Eval("ElectiveSubject3Name") %>  <%# Eval("ElectiveSubject3PaperType") + "</strong>" %></td>
                                 <td><%# Eval("ElectiveSubject3Date") %></td>
                                 <td><%# Eval("ElectiveSubject3Shift") %></td>
                                 <td><%# Eval("ElectiveSubject3Time") %></td>
@@ -393,8 +397,8 @@
                             <tr>
                                 <td colspan="2" id="tdAdditionalHeader" runat="server"></td>
                                 <%--<td></td>--%>
-                                <td><%# "<strong>" + Eval("AdditionalSubjectCode") + "</strong>" %></td>
-                                <td><%# "<strong>" + Eval("AdditionalSubjectName") %> <%# Eval("AdditionalSubjectPaperType") + "</strong>" %></td>
+                                <td style="font-size: large;"><%# "<strong>" + Eval("AdditionalSubjectCode") + "</strong>" %></td>
+                                <td style="font-size: large;"><%# "<strong>" + Eval("AdditionalSubjectName") %> <%# Eval("AdditionalSubjectPaperType") + "</strong>" %></td>
                                 <td><%# Eval("AdditionalSubjectDate") %></td>
                                 <td><%# Eval("AdditionalSubjectShift") %></td>
                                 <td><%# Eval("AdditionalSubjectTime") %></td>
@@ -404,8 +408,8 @@
                                 <td colspan="2">व्यावसायिक ट्रेड<br>
                                     (Vocational Trade)</td>
                                 <%--<td></td>--%>
-                                <td><%# "<strong>" + Eval("VocationalSubjectCode") + "</strong>" %></td>
-                                <td><%# "<strong>" + Eval("VocationalSubjectName") %>   <%# Eval("VocationalSubjectPaperType") + "</strong>" %></td>
+                                <td style="font-size: large;"><%# "<strong>" + Eval("VocationalSubjectCode") + "</strong>" %></td>
+                                <td style="font-size: large;"><%# "<strong>" + Eval("VocationalSubjectName") %>   <%# Eval("VocationalSubjectPaperType") + "</strong>" %></td>
                                 <td><%# Eval("VocationalSubjectDate") %></td>
                                 <td><%# Eval("VocationalSubjectShift") %></td>
                                 <td><%# Eval("VocationalSubjectTime") %></td>
