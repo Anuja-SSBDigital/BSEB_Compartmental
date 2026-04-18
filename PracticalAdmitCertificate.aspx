@@ -128,10 +128,11 @@
     }
 }
     </style>--%>
+        <link href="https://fonts.googleapis.com/css2?family=Carlito:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
         body {
-            font-family: none;
+            font-family: 'Carlito', "Calibri", sans-serif;
         }
 
         ol {
@@ -345,11 +346,11 @@
                 </div>
             </div>
         </div>--%>
-                    <table style="width: 100%; border-collapse: collapse; font-family: system-ui;text-transform: uppercase;">
+                    <table style="width: 100%; border-collapse: collapse;text-transform: uppercase;">
                         <tr>
                             <!-- Left Side: Student Details -->
-                            <td style="width: 85%; vertical-align: top; padding-right: 10px; font-family: sans-serif; line-height: 1.8;">
-                                <table style="width: 100%; font-size: 17px; line-height: 2; border-collapse: collapse; font-weight: 600; font-family: system-ui;">
+                            <td style="width: 85%; vertical-align: top; padding-right: 10px;  line-height: 1.8;">
+                                <table style="width: 100%; font-size: 17px; line-height: 2; border-collapse: collapse; font-weight: 600;">
                                     <asp:HiddenField ID="hfFacultyId" runat="server" Value='<%# Eval("FacultyId") %>' />
                                     <colgroup>
                                         <col style="width: 25%;">
@@ -427,7 +428,7 @@
 
 
                     <!-- Examination Table -->
-                    <h3 style="font-size: 14px; margin-bottom: 5px; margin-top: 12px; font-weight: 600; font-family: system-ui;">प्रायोगिक परीक्षा के विषय (निर्धारित परीक्षा कार्यक्रम सहित)
+                    <h3 style="font-size: 14px; margin-bottom: 5px; margin-top: 12px; font-weight: 600; ">प्रायोगिक परीक्षा के विषय (निर्धारित परीक्षा कार्यक्रम सहित)
                     </h3>
 
 
