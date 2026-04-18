@@ -336,42 +336,42 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td rowspan="2">अनिवार्य विषय<br>
-                                    (Compulsory Subjects)</td>
-                                <td>भाषा विषय-1</td>
+                                <td rowspan="2"><b>अनिवार्य विषय<br>
+                                    (Compulsory Subjects)</b></td>
+                                <td><b>भाषा विषय-1</b></td>
                                 <td style="font-size: large;">
                                     <%# "<strong>" + Eval("CompulsorySubject1Code") + "</strong>" %>
                                 </td>
                                 <td style="font-size: large;">
-                                    <%# "<strong>" + Eval("CompulsorySubject1Name") %>  <%# Eval("CompulsorySubject1PaperType") + "</strong>" %></td>
-                                <td><%# Eval("CompulsorySubject1Date") %></td>
-                                <td><%# Eval("CompulsorySubject1Shift") %></td>
-                                <td><%# Eval("CompulsorySubject1Time") %></td>
+                                    <%# "<strong>" + Eval("CompulsorySubject1Name") %>  <%# Eval("CompulsorySubject1PaperType") + "</strong>"  %></td>
+                                <td style="font-size: large;"><%# "<strong>" +Eval("CompulsorySubject1Date") + "</strong>" %></td>
+                                <td style="font-size: large;"><%# "<strong>" +Eval("CompulsorySubject1Shift") + "</strong>" %></td>
+                                <td style="font-size: large;"><%# "<strong>" +Eval("CompulsorySubject1Time") + "</strong>" %></td>
 
                             </tr>
                             <tr>
-                                <td>भाषा विषय-2</td>
+                                <td><b>भाषा विषय-2</b></td>
                                 <td style="font-size: large;">
                                     <%# "<strong>" + Eval("CompulsorySubject2Code") + "</strong>" %></td>
                                 <td style="font-size: large;">
                                     <%# "<strong>" + Eval("CompulsorySubject2Name") %>    <%# Eval("CompulsorySubject2PaperType") + "</strong>" %></td>
-                                <td><%# Eval("CompulsorySubject2Date") %></td>
-                                <td><%# Eval("CompulsorySubject2Shift") %></td>
-                                <td><%# Eval("CompulsorySubject2Time") %></td>
+                                <td style="font-size: large;"><%# "<strong>" +  Eval("CompulsorySubject2Date") + "</strong>" %></td>
+                                <td style="font-size: large;"><%#  "<strong>" + Eval("CompulsorySubject2Shift") + "</strong>" %></td>
+                                <td style="font-size: large;"><%#  "<strong>" + Eval("CompulsorySubject2Time") + "</strong>" %></td>
 
                             </tr>
 
                             <tr>
-                                <td rowspan="3">ऐच्छिक विषय<br>
-                                    (Elective Subjects)</td>
+                                <td rowspan="3"><b>ऐच्छिक विषय<br>
+                                    (Elective Subjects)</b></td>
                                 <td id="tdElective1" runat="server"></td>
                                 <td style="font-size: large;">
                                     <%# "<strong>" + Eval("ElectiveSubject1Code") + "</strong>" %></td>
                                 <td style="font-size: large;">
                                     <%# "<strong>" + Eval("ElectiveSubject1Name") %>  <%# Eval("ElectiveSubject1PaperType")  + "</strong>" %></td>
-                                <td><%# Eval("ElectiveSubject1Date") %></td>
-                                <td><%# Eval("ElectiveSubject1Shift") %></td>
-                                <td><%# Eval("ElectiveSubject1Time") %></td>
+                                <td style="font-size: large;"><%#  "<strong>" + Eval("ElectiveSubject1Date") + "</strong>" %></td>
+                                <td style="font-size: large;"><%# "<strong>" + Eval("ElectiveSubject1Shift") + "</strong>" %></td>
+                                <td style="font-size: large;"><%# "<strong>" + Eval("ElectiveSubject1Time") + "</strong>" %></td>
 
                             </tr>
                             <tr>
@@ -380,18 +380,18 @@
                                     <%# "<strong>" + Eval("ElectiveSubject2Code") + "</strong>" %></td>
                                 <td style="font-size: large;">
                                     <%# "<strong>" + Eval("ElectiveSubject2Name") %>  <%# Eval("ElectiveSubject2PaperType") + "</strong>" %></td>
-                                <td><%# Eval("ElectiveSubject2Date") %></td>
-                                <td><%# Eval("ElectiveSubject2Shift") %></td>
-                                <td><%# Eval("ElectiveSubject2Time") %></td>
+                                <td style="font-size: large;"><%# "<strong>" + Eval("ElectiveSubject2Date") + "</strong>" %></td>
+                                <td style="font-size: large;"><%# "<strong>" + Eval("ElectiveSubject2Shift") + "</strong>" %></td>
+                                <td style="font-size: large;"><%# "<strong>" + Eval("ElectiveSubject2Time") + "</strong>" %></td>
 
                             </tr>
                             <tr>
                                 <td id="tdElective3" runat="server"></td>
                                 <td style="font-size: large;"><%# "<strong>" + Eval("ElectiveSubject3Code") + "</strong>" %></td>
                                 <td style="font-size: large;"><%# "<strong>" + Eval("ElectiveSubject3Name") %>  <%# Eval("ElectiveSubject3PaperType") + "</strong>" %></td>
-                                <td><%# Eval("ElectiveSubject3Date") %></td>
-                                <td><%# Eval("ElectiveSubject3Shift") %></td>
-                                <td><%# Eval("ElectiveSubject3Time") %></td>
+                                <td style="font-size: large;"><%# "<strong>" + Eval("ElectiveSubject3Date") + "</strong>" %></td>
+                                <td style="font-size: large;"><%# "<strong>" + Eval("ElectiveSubject3Shift") + "</strong>" %></td>
+                                <td style="font-size: large;"><%# "<strong>" + Eval("ElectiveSubject3Time") + "</strong>" %></td>
 
                             </tr>
                             <tr>
@@ -399,20 +399,20 @@
                                 <%--<td></td>--%>
                                 <td style="font-size: large;"><%# "<strong>" + Eval("AdditionalSubjectCode") + "</strong>" %></td>
                                 <td style="font-size: large;"><%# "<strong>" + Eval("AdditionalSubjectName") %> <%# Eval("AdditionalSubjectPaperType") + "</strong>" %></td>
-                                <td><%# Eval("AdditionalSubjectDate") %></td>
-                                <td><%# Eval("AdditionalSubjectShift") %></td>
-                                <td><%# Eval("AdditionalSubjectTime") %></td>
+                                <td style="font-size: large;"><%# "<strong>" + Eval("AdditionalSubjectDate") + "</strong>" %></td>
+                                <td style="font-size: large;"><%# "<strong>" + Eval("AdditionalSubjectShift") + "</strong>" %></td>
+                                <td style="font-size: large;"><%# "<strong>" + Eval("AdditionalSubjectTime") + "</strong>" %></td>
                             </tr>
                             <tr runat="server" id="trVocational">
                                 <%--<asp:PlaceHolder ID="phVocationalHeader" runat="server" Visible='<%# Eval("HasVocationalSubjects") %>'>--%>
-                                <td colspan="2">व्यावसायिक ट्रेड<br>
-                                    (Vocational Trade)</td>
+                                <td colspan="2"><b>व्यावसायिक ट्रेड<br>
+                                    (Vocational Trade)</b></td>
                                 <%--<td></td>--%>
                                 <td style="font-size: large;"><%# "<strong>" + Eval("VocationalSubjectCode") + "</strong>" %></td>
                                 <td style="font-size: large;"><%# "<strong>" + Eval("VocationalSubjectName") %>   <%# Eval("VocationalSubjectPaperType") + "</strong>" %></td>
-                                <td><%# Eval("VocationalSubjectDate") %></td>
-                                <td><%# Eval("VocationalSubjectShift") %></td>
-                                <td><%# Eval("VocationalSubjectTime") %></td>
+                                <td style="font-size: large;"><%# "<strong>" + Eval("VocationalSubjectDate") + "</strong>" %></td>
+                                <td style="font-size: large;"><%# "<strong>" + Eval("VocationalSubjectShift") + "</strong>" %></td>
+                                <td style="font-size: large;"><%# "<strong>" + Eval("VocationalSubjectTime") + "</strong>" %></td>
 
                                 <%--</asp:PlaceHolder>--%>
                             </tr>

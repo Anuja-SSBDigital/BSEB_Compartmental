@@ -199,11 +199,11 @@ public partial class PracticalAdmitCertificate : System.Web.UI.Page
             if (ExamTypeName == "QUALIFYING")
             {
                 //
-                trAdditionalSubjectgrpname.InnerHtml = "Qualifying Subject ";
+                trAdditionalSubjectgrpname.InnerHtml = "<b>Qualifying Subject</b> ";
             }
             else
             {
-                trAdditionalSubjectgrpname.InnerHtml = "अतिरिक्त विषय(Additional Subject)";
+                trAdditionalSubjectgrpname.InnerHtml = "<b>अतिरिक्त विषय(Additional Subject)</b>";
             }
             if (facultyName == "VOCATIONAL")
             {

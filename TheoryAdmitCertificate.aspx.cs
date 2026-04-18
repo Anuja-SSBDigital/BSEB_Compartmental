@@ -208,11 +208,11 @@ public partial class TheoryAdmitCertificate : System.Web.UI.Page
             if (ExamTypeName == "QUALIFYING")
             {
                 //
-                tdAdditionalHeader.InnerHtml = "Qualifying Subject ";
+                tdAdditionalHeader.InnerHtml = "<b>Qualifying Subject</b> ";
             }
             else
             {
-                tdAdditionalHeader.InnerHtml = "अतिरिक्त विषय(Additional Subject)";
+                tdAdditionalHeader.InnerHtml = "<b>अतिरिक्त विषय(Additional Subject)</b>";
             }
             // Show/hide section
             if (facultyName == "VOCATIONAL")
@@ -224,13 +224,13 @@ public partial class TheoryAdmitCertificate : System.Web.UI.Page
                 lblCollegeName.Text = "+2 स्कूल का नाम";
 
                 if (tdElective1 != null)
-                    tdElective1.InnerHtml = "ऐच्छिक विषय-1 <br /> (फाउंडेशन कोर्स )";
+                    tdElective1.InnerHtml = "<b>ऐच्छिक विषय-1 <br /> (फाउंडेशन कोर्स )</b>";
 
                 if (tdElective2 != null)
-                    tdElective2.InnerHtml = "ऐच्छिक विषय-2 <br /> (व्यावसायिक शिक्षा ट्रेड पत्र-I )";
+                    tdElective2.InnerHtml = "<b>ऐच्छिक विषय-2 <br /> (व्यावसायिक शिक्षा ट्रेड पत्र-I )</b>";
 
                 if (tdElective3 != null)
-                    tdElective3.InnerHtml = "ऐच्छिक विषय-3 <br /> (व्यावसायिक शिक्षा ट्रेड पत्र-II )";
+                    tdElective3.InnerHtml = "<b>ऐच्छिक विषय-3 <br /> (व्यावसायिक शिक्षा ट्रेड पत्र-II )</b>";
                 lblExamSchoolHindi.Text = "+2 विद्यालय प्रधान का हस्ताक्षर एवं मुहर";
                 trVocational.Visible = hasVocational;
             }
@@ -241,13 +241,13 @@ public partial class TheoryAdmitCertificate : System.Web.UI.Page
                 lblExamTitleHindi.Text = "इंटरमीडिएट कम्पार्टमेंटल परीक्षा, 2026";
                 lblCollegeName.Text = "कॉलेज/+2 स्कूल का नाम";
                 if (tdElective1 != null)
-                    tdElective1.InnerHtml = "ऐच्छिक विषय-1";
+                    tdElective1.InnerHtml = "<b>ऐच्छिक विषय-1</b>";
 
                 if (tdElective2 != null)
-                    tdElective2.InnerHtml = "ऐच्छिक विषय-2";
+                    tdElective2.InnerHtml = "<b>ऐच्छिक विषय-2</b>";
 
                 if (tdElective3 != null)
-                    tdElective3.InnerHtml = "ऐच्छिक विषय-3";
+                    tdElective3.InnerHtml = "<b>ऐच्छिक विषय-3</b>";
                 lblExamSubjectHindi.Text = "सैद्धान्तिक कम्पार्टमेंटल परीक्षा के विषय (निर्धारित परीक्षा कार्यक्रम सहित)";
                 lblExamSchoolHindi.Text = "महाविद्यालय / +2 विद्यालय प्रधान का हस्ताक्षर एवं मुहर";
                 trVocational.Visible = hasVocational;
@@ -261,13 +261,13 @@ public partial class TheoryAdmitCertificate : System.Web.UI.Page
                 lblExamTitleHindi.Text = "इंटरमीडिएट विशेष परीक्षा, 2026";
                 lblCollegeName.Text = "कॉलेज/+2 स्कूल का नाम";
                 if (tdElective1 != null)
-                    tdElective1.InnerHtml = "ऐच्छिक विषय-1";
+                    tdElective1.InnerHtml = "<b>ऐच्छिक विषय-1</b>";
 
                 if (tdElective2 != null)
-                    tdElective2.InnerHtml = "ऐच्छिक विषय-2";
+                    tdElective2.InnerHtml = "<b>ऐच्छिक विषय-2</b>";
 
                 if (tdElective3 != null)
-                    tdElective3.InnerHtml = "ऐच्छिक विषय-3";
+                    tdElective3.InnerHtml = "<b>ऐच्छिक विषय-3</b>";
                 lblExamSubjectHindi.Text = "सैद्धान्तिक विशेष परीक्षा के विषय (निर्धारित परीक्षा कार्यक्रम सहित)";
                 lblExamSchoolHindi.Text = "महाविद्यालय / +2 विद्यालय प्रधान का हस्ताक्षर एवं मुहर";
                 trVocational.Visible = hasVocational;
