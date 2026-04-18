@@ -428,7 +428,7 @@
 
 
                     <!-- Examination Table -->
-                    <h3 style="font-size: 14px; margin-bottom: 5px; margin-top: 12px; font-weight: 600; ">प्रायोगिक परीक्षा के विषय (निर्धारित परीक्षा कार्यक्रम सहित)
+                    <h3 style="font-size: large; margin-bottom: 5px; margin-top: 12px; font-weight: 600; "><b>प्रायोगिक परीक्षा के विषय (निर्धारित परीक्षा कार्यक्रम सहित)</b>
                     </h3>
 
 
@@ -443,7 +443,7 @@
                         </thead>
                         <tbody>
                             <tr runat="server" id="trElective1">
-                                <td rowspan="3" style="border: none">वैकल्पिक विषय</td>
+                                <td rowspan="3" style="border: none"><b>वैकल्पिक विषय</b></td>
                                 <td style="font-weight: 600; font-size: larger;"><%# Eval("ElectiveSubject1Code") %></td>
                                 <td style="font-weight: 600; font-size: larger;"><%# Eval("ElectiveSubject1Name") %> <%# Eval("ElectiveSubject1PaperType") %></td>
                                 <%--<td rowspan="3" style="border-bottom: hidden; vertical-align: middle;">--%>
@@ -471,7 +471,7 @@
                                 <%-- <td style="text-align: center;"><%# Eval("AdditionalSubjectDate") %></td>--%>
                             </tr>
                             <tr runat="server" id="trVocational">
-                                <td>व्यावसायिक विषय</td>
+                                <td><b>व्यावसायिक विषय</b></td>
                                 <td style="font-weight: 600; font-size: larger;"><%# Eval("VocationalSubjectCode") %></td>
                                 <td style="font-weight: 600; font-size: larger;"><%# Eval("VocationalSubjectName") %>  <%# Eval("VocationalSubjectPaperType") %></td>
 
