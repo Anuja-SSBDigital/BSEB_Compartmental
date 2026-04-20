@@ -178,6 +178,37 @@
                 transform: translateX(-100%);
             }
         }
+                .notice-box {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 20px 25px;
+    background-color: #fff8e1;
+    border-left: 6px solid #ff9800;
+    border-radius: 8px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.notice-title {
+    margin: 0 0 15px;
+    color: #d32f2f;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.notice-box p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    margin: 10px 0;
+}
+
+.highlight {
+    color: #d32f2f;
+    font-weight: bold;
+}
     </style>
 </head>
 <body>
@@ -253,6 +284,15 @@
                 <div class="module-title">Pre Examination</div>
             </asp:LinkButton>
         </div>
+          <div class="notice-box">
+      <h2 class="notice-title">IMPORTANT NOTICE</h2>
+      <p>
+          REGULAR/PRIVATE, EX-REGULAR, IMPROVEMENT तथा QUALIFYING श्रेणी के अंतर्गत  जिन अभ्यर्थियों के प्रायोगिक (Practical) विषय हैं, उनकी प्रायोगिक परीक्षा आयोजित की जाएगी।
+      </p>
+      <p>
+          जबकि <span class="highlight">COMPARTMENTAL</span> श्रेणी के किसी भी छात्र/छात्रा की प्रायोगिक परीक्षा नहीं ली जाएगी।
+      </p>
+  </div>
     </form>
 </body>
 </html>
