@@ -123,6 +123,37 @@
                 flex-direction: column;
             }
         }
+        .notice-box {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 20px 25px;
+    background-color: #fff8e1;
+    border-left: 6px solid #ff9800;
+    border-radius: 8px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.notice-title {
+    margin: 0 0 15px;
+    color: #d32f2f;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.notice-box p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    margin: 10px 0;
+}
+
+.highlight {
+    color: #d32f2f;
+    font-weight: bold;
+}
     </style>
 </head>
 <body>
@@ -225,6 +256,15 @@
                               <a href="assets/Notifications/Inter Special & Compart Vigyapti 2026.pdf"  download="Inter Special & Compart Vigyapti 2026.pdf"  style="display: block; font-size: 24px;" class="download-link-item mt-4">
                                 <i class="fas fa-file-download" style="margin-right: 4px;"></i>Click here to download vigyapti for Inter Special &amp; Compartmental Examination 2026
                             </a>
+                        <div class="notice-box">
+                            <h2 class="notice-title">IMPORTANT NOTICE</h2>
+                            <p>
+                                REGULAR/PRIVATE, EX-REGULAR, IMPROVEMENT तथा QUALIFYING श्रेणी के अंतर्गत  जिन अभ्यर्थियों के प्रायोगिक (Practical) विषय हैं, उनकी प्रायोगिक परीक्षा आयोजित की जाएगी।
+                            </p>
+                            <p>
+                                जबकि <span class="highlight">COMPARTMENTAL</span> श्रेणी के किसी भी छात्र/छात्रा की प्रायोगिक परीक्षा नहीं ली जाएगी।
+                            </p>
+                        </div>
                             <%-- <p style="color: #e66000; font-weight: 500; font-size: 16px;">
                                 <i class="fas fa-home"></i>नोट: यहाँ पर आप महत्वपूर्ण सूचना देख सकते हैं।
                             </p>--%>
