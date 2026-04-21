@@ -276,16 +276,8 @@ public partial class ExamForm : System.Web.UI.Page
                 lblStatus.Text = "Submitted";
                 lblStatus.CssClass = "badge badge-success";
                 btnView.Visible = true;          // show View button
-               // btnCorrection.Visible = true;
-                btnRegister.Visible = false;// allow correction if required
-                                           // btnCorrection.Visible = true;    // allow correction if required it's not availbl to open 
-            }
-            else if (examFeeSubmit && !examFormSubmit)
-            {
-                lblStatus.Text = "Pending";
-                lblStatus.CssClass = "badge badge-warning";
-                btnView.Visible = false;
-                //btnRegister.Visible = true;
+                                                 // btnCorrection.Visible = true;
+                                                 // btnRegister.Visible = false;// allow correction if required
                 if (Session["CollegeName"].ToString() == "Admin") // this con for temprary 
                 {
                     btnRegister.Visible = true;
@@ -294,6 +286,15 @@ public partial class ExamForm : System.Web.UI.Page
                 {
                     btnRegister.Visible = false;
                 }
+                // btnCorrection.Visible = true;    // allow correction if required it's not availbl to open 
+            }
+            else if (examFeeSubmit && !examFormSubmit)
+            {
+                lblStatus.Text = "Pending";
+                lblStatus.CssClass = "badge badge-warning";
+                btnView.Visible = false;
+                btnRegister.Visible = true;
+              
                 // btnCorrection.Visible = false;
                 // hide View (form not submitted)
                 // btnCorrection.Visible = true;   // hide Correction until submitted
