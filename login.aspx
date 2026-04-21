@@ -259,10 +259,10 @@
                         <div class="notice-box">
                             <h2 class="notice-title">IMPORTANT NOTICE</h2>
                             <p>
-                                REGULAR/PRIVATE, EX-REGULAR, IMPROVEMENT तथा QUALIFYING श्रेणी के अंतर्गत  जिन अभ्यर्थियों के प्रायोगिक (Practical) विषय हैं, उनकी प्रायोगिक परीक्षा आयोजित की जाएगी।
+                                REGULAR/PRIVATE, EX-REGULAR, IMPROVEMENT तथा QUALIFYING श्रेणी के अंतर्गत  जिन छात्र/छात्राओं का प्रायोगिक (Practical) विषय हैं, उनकी प्रायोगिक परीक्षा आयोजित की जाएगी।
                             </p>
                             <p>
-                                जबकि <span class="highlight">COMPARTMENTAL</span> श्रेणी के किसी भी छात्र/छात्रा की प्रायोगिक परीक्षा नहीं ली जाएगी।
+                                जबकि <span class="highlight">COMPARTMENTAL</span> श्रेणी के किसी भी छात्र/छात्राओं की प्रायोगिक परीक्षा नहीं ली जाएगी।
                             </p>
                         </div>
                             <%-- <p style="color: #e66000; font-weight: 500; font-size: 16px;">
