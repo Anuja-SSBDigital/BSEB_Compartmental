@@ -285,7 +285,15 @@ public partial class ExamForm : System.Web.UI.Page
                 lblStatus.Text = "Pending";
                 lblStatus.CssClass = "badge badge-warning";
                 btnView.Visible = false;
-                btnRegister.Visible = true;
+                //btnRegister.Visible = true;
+                if (Session["CollegeName"].ToString() == "Admin") // this con for temprary 
+                {
+                    btnRegister.Visible = true;
+                }
+                else
+                {
+                    btnRegister.Visible = false;
+                }
                 // btnCorrection.Visible = false;
                 // hide View (form not submitted)
                 // btnCorrection.Visible = true;   // hide Correction until submitted
